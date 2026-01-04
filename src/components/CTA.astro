@@ -1,0 +1,44 @@
+---
+// CTA Section Component
+---
+
+<section class="cta-section">
+  <h2>Ready to bring your icons to life?</h2>
+  <p>A growing open source library of animated icons built for real interfaces.</p>
+  <div class="hero-actions">
+    <a href="#icons" class="btn btn-primary btn-large">Browse Icons</a>
+    <a href="https://github.com/hovue/hovue" class="btn btn-ghost btn-large">Star on GitHub</a>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .cta-section p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
+
