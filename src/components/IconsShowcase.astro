@@ -10,125 +10,633 @@
   </div>
 
   <div class="icons-showcase animate-on-scroll">
-    <div class="icons-grid">
+    <!-- Search and Filter Controls -->
+    <div class="icons-controls">
+      <div class="search-wrapper">
+        <svg
+          class="search-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="M21 21l-4.35-4.35"></path>
+        </svg>
+        <input
+          type="text"
+          id="icon-search"
+          class="icon-search-input"
+          placeholder="Search icons..."
+          autocomplete="off"
+        />
+        <button
+          class="clear-search"
+          id="clear-search"
+          style="display: none;"
+          aria-label="Clear search"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="category-filters">
+        <button class="category-filter active" data-category="all">All</button>
+        <button class="category-filter" data-category="arrows">Arrows</button>
+        <button class="category-filter" data-category="actions">Actions</button>
+        <button class="category-filter" data-category="ui">UI</button>
+        <button class="category-filter" data-category="media">Media</button>
+        <button class="category-filter" data-category="files">Files</button>
+        <button class="category-filter" data-category="loaders">Loaders</button>
+      </div>
+    </div>
+    <div class="icons-grid" id="icons-grid">
       <!-- Row 1: Arrows -->
-      <div class="icon-item" title="HoArrowRight">
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div class="icon-item" data-icon-name="HoArrowRight" data-category="arrows">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoArrowRight</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoArrowLeft">
-        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <div class="icon-item" data-icon-name="HoArrowLeft" data-category="arrows">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoArrowLeft</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoArrowUp">
-        <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      <div class="icon-item" data-icon-name="HoArrowUp" data-category="arrows">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoArrowUp</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoArrowDown">
-        <svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      <div class="icon-item" data-icon-name="HoArrowDown" data-category="arrows">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoArrowDown</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoChevronRight">
-        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      <div class="icon-item" data-icon-name="HoChevronRight" data-category="arrows">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoChevronRight</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoChevronDown">
-        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      <div class="icon-item" data-icon-name="HoChevronDown" data-category="arrows">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoChevronDown</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
 
       <!-- Row 2: Actions -->
-      <div class="icon-item" title="HoCheck">
-        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+      <div class="icon-item" data-icon-name="HoCheck" data-category="actions">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoCheck</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoX">
-        <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <div class="icon-item" data-icon-name="HoX" data-category="actions">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoX</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoPlus">
-        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      <div class="icon-item" data-icon-name="HoPlus" data-category="actions">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoPlus</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoMinus">
-        <svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+      <div class="icon-item" data-icon-name="HoMinus" data-category="actions">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M5 12h14"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoMinus</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoSearch">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <div class="icon-item" data-icon-name="HoSearch" data-category="actions">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoSearch</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoMenu">
-        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <div class="icon-item" data-icon-name="HoMenu" data-category="actions">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoMenu</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
 
       <!-- Row 3: UI Elements -->
-      <div class="icon-item" title="HoHome">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+      <div class="icon-item" data-icon-name="HoHome" data-category="ui">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M9 22V12h6v10"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoHome</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoUser">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg>
+      <div class="icon-item" data-icon-name="HoUser" data-category="ui">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoUser</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoSettings">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      <div class="icon-item" data-icon-name="HoSettings" data-category="ui">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><circle cx="12" cy="12" r="3"></circle><path
+              d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoSettings</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoBell">
-        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+      <div class="icon-item" data-icon-name="HoBell" data-category="ui">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoBell</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoMail">
-        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+      <div class="icon-item" data-icon-name="HoMail" data-category="ui">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoMail</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoHeart">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      <div class="icon-item" data-icon-name="HoHeart" data-category="ui">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path
+              d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoHeart</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
 
       <!-- Row 4: Media -->
-      <div class="icon-item" title="HoPlay">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      <div class="icon-item" data-icon-name="HoPlay" data-category="media">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><polygon points="5,3 19,12 5,21"></polygon></svg
+          >
+        </div>
+        <span class="icon-name">HoPlay</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoPause">
-        <svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+      <div class="icon-item" data-icon-name="HoPause" data-category="media">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"
+            ></rect></svg
+          >
+        </div>
+        <span class="icon-name">HoPause</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoVolume">
-        <svg viewBox="0 0 24 24"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+      <div class="icon-item" data-icon-name="HoVolume" data-category="media">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"></polygon><path
+              d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoVolume</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoCamera">
-        <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      <div class="icon-item" data-icon-name="HoCamera" data-category="media">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
+            ></path><circle cx="12" cy="13" r="4"></circle></svg
+          >
+        </div>
+        <span class="icon-name">HoCamera</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoImage">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <div class="icon-item" data-icon-name="HoImage" data-category="media">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle
+              cx="8.5"
+              cy="8.5"
+              r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoImage</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoMusic">
-        <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      <div class="icon-item" data-icon-name="HoMusic" data-category="media">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle
+              cx="18"
+              cy="16"
+              r="3"></circle></svg
+          >
+        </div>
+        <span class="icon-name">HoMusic</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
 
       <!-- Row 5: Files -->
-      <div class="icon-item" title="HoFile">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+      <div class="icon-item" data-icon-name="HoFile" data-category="files">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline
+              points="14,2 14,8 20,8"></polyline></svg
+          >
+        </div>
+        <span class="icon-name">HoFile</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoFolder">
-        <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+      <div class="icon-item" data-icon-name="HoFolder" data-category="files">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoFolder</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoCopy">
-        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      <div class="icon-item" data-icon-name="HoCopy" data-category="files">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect x="9" y="9" width="13" height="13" rx="2"></rect><path
+              d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoCopy</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoTrash">
-        <svg viewBox="0 0 24 24"><polyline points="3,6 5,6 21,6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+      <div class="icon-item" data-icon-name="HoTrash" data-category="files">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polyline points="3,6 5,6 21,6"></polyline><path
+              d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoTrash</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoDownload">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <div class="icon-item" data-icon-name="HoDownload" data-category="files">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline
+              points="7,10 12,15 17,10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg
+          >
+        </div>
+        <span class="icon-name">HoDownload</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoUpload">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <div class="icon-item" data-icon-name="HoUpload" data-category="files">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline
+              points="17,8 12,3 7,8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg
+          >
+        </div>
+        <span class="icon-name">HoUpload</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
 
       <!-- Row 6: Loaders -->
-      <div class="icon-item" title="HoLoader">
-        <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+      <div class="icon-item" data-icon-name="HoLoader" data-category="loaders">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="M21 12a9 9 0 11-6.219-8.56"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoLoader</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoRefresh">
-        <svg viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+      <div class="icon-item" data-icon-name="HoRefresh" data-category="loaders">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M23 4v6h-6M1 20v-6h6"></path><path
+              d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"></path></svg
+          >
+        </div>
+        <span class="icon-name">HoRefresh</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoSync">
-        <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><polyline points="1,20 1,14 7,14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+      <div class="icon-item" data-icon-name="HoSync" data-category="loaders">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polyline points="23,4 23,10 17,10"></polyline><polyline points="1,20 1,14 7,14"
+            ></polyline><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"
+            ></path></svg
+          >
+        </div>
+        <span class="icon-name">HoSync</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoClock">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+      <div class="icon-item" data-icon-name="HoClock" data-category="loaders">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"
+            ></polyline></svg
+          >
+        </div>
+        <span class="icon-name">HoClock</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoCalendar">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div class="icon-item" data-icon-name="HoCalendar" data-category="loaders">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect x="3" y="4" width="18" height="18" rx="2"></rect><line
+              x1="16"
+              y1="2"
+              x2="16"
+              y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line
+              x1="3"
+              y1="10"
+              x2="21"
+              y2="10"></line></svg
+          >
+        </div>
+        <span class="icon-name">HoCalendar</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
-      <div class="icon-item" title="HoStar">
-        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+      <div class="icon-item" data-icon-name="HoStar" data-category="loaders">
+        <div class="icon-wrapper">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polygon
+              points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+            ></polygon></svg
+          >
+        </div>
+        <span class="icon-name">HoStar</span>
+        <div class="copy-indicator">Copied!</div>
       </div>
     </div>
   </div>
@@ -198,22 +706,129 @@
     margin-top: var(--spacing-2xl);
   }
 
-  .icons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: var(--spacing-md);
+  .icons-controls {
+    margin-bottom: var(--spacing-2xl);
   }
 
-  .icon-item {
-    aspect-ratio: 1;
+  .search-wrapper {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto var(--spacing-lg);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  .icon-search-input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 3rem;
     background: var(--bg-dark);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+  }
+
+  .icon-search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(49, 151, 149, 0.1);
+  }
+
+  .clear-search {
+    position: absolute;
+    right: var(--spacing-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: var(--spacing-xs);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+  }
+
+  .clear-search:hover {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  .category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+  }
+
+  .category-filter {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
     cursor: pointer;
     transition: all 0.2s ease;
+  }
+
+  .category-filter:hover {
+    border-color: var(--primary);
+    color: var(--text-primary);
+  }
+
+  .category-filter.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: var(--spacing-3xl);
+    color: var(--text-muted);
+  }
+
+  .no-results h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+  }
+
+  .icon-item.hidden {
+    display: none;
+  }
+
+  .icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .icon-item {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
   }
 
   .icon-item:hover {
@@ -227,17 +842,239 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+  }
+
   .icon-item svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     stroke: var(--text-secondary);
-    stroke-width: 1.5;
+    stroke-width: 2;
     fill: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
   }
 
   .icon-item:hover svg {
     stroke: var(--primary);
+    animation: iconHover 0.6s ease-in-out;
+  }
+
+  @keyframes iconHover {
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.15) rotate(-5deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(5deg);
+    }
+    75% {
+      transform: scale(1.15) rotate(-3deg);
+    }
+  }
+
+  /* Specific animations for different icon types */
+  .icon-item[data-icon-name*='Arrow']:hover svg {
+    animation: slideRight 0.5s ease-in-out;
+  }
+
+  @keyframes slideRight {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(4px);
+    }
+  }
+
+  .icon-item[data-icon-name*='ArrowLeft']:hover svg {
+    animation: slideLeft 0.5s ease-in-out;
+  }
+
+  @keyframes slideLeft {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-4px);
+    }
+  }
+
+  .icon-item[data-icon-name*='ArrowUp']:hover svg {
+    animation: slideUp 0.5s ease-in-out;
+  }
+
+  @keyframes slideUp {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .icon-item[data-icon-name*='ArrowDown']:hover svg {
+    animation: slideDown 0.5s ease-in-out;
+  }
+
+  @keyframes slideDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+  }
+
+  .icon-item[data-icon-name*='Check']:hover svg {
+    animation: checkBounce 0.5s ease-in-out;
+  }
+
+  @keyframes checkBounce {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  .icon-item[data-icon-name*='Plus']:hover svg,
+  .icon-item[data-icon-name*='Minus']:hover svg {
+    animation: rotateScale 0.5s ease-in-out;
+  }
+
+  @keyframes rotateScale {
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(90deg) scale(1.2);
+    }
+  }
+
+  .icon-item[data-icon-name*='Search']:hover svg {
+    animation: searchPulse 0.6s ease-in-out;
+  }
+
+  @keyframes searchPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.8;
+    }
+  }
+
+  .icon-item[data-icon-name*='Refresh']:hover svg,
+  .icon-item[data-icon-name*='Sync']:hover svg,
+  .icon-item[data-icon-name*='Loader']:hover svg {
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .icon-item[data-icon-name*='Heart']:hover svg {
+    animation: heartBeat 0.6s ease-in-out;
+  }
+
+  @keyframes heartBeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    25%,
+    75% {
+      transform: scale(1.15);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .icon-item[data-icon-name*='Star']:hover svg {
+    animation: starTwinkle 0.6s ease-in-out;
+  }
+
+  @keyframes starTwinkle {
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+    25% {
+      transform: scale(1.2) rotate(-10deg);
+    }
+    75% {
+      transform: scale(1.2) rotate(10deg);
+    }
+  }
+
+  .icon-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+    transition: color 0.2s ease;
+    word-break: break-word;
+    line-height: 1.3;
+  }
+
+  .icon-item:hover .icon-name {
+    color: var(--text-primary);
+  }
+
+  .copy-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: var(--primary);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.2s ease;
+    z-index: 10;
+    white-space: nowrap;
+  }
+
+  .icon-item.copied .copy-indicator {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  .icon-item.copied {
+    border-color: var(--primary);
+    background: rgba(49, 151, 149, 0.1);
   }
 
   .stats {
@@ -260,20 +1097,180 @@
     font-size: 0.9375rem;
     font-weight: 500;
   }
+
+  @media (max-width: 768px) {
+    .icons-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: var(--spacing-md);
+    }
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+    }
+
+    .icon-item svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .icon-name {
+      font-size: 0.6875rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .icons-grid {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: var(--spacing-sm);
+    }
+  }
 </style>
 
 <script>
-  // Icon hover animations
-  document.querySelectorAll('.icon-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      const svg = item.querySelector('svg');
-      svg.style.transform = 'scale(1.15) rotate(5deg)';
+  // Generate copy text for an icon
+  function getIconCopyText(iconName) {
+    return `import { ${iconName} } from 'hovue'
+
+<template>
+  <${iconName} 
+    :size="24"
+    color="currentColor"
+    animation="slide"
+    :animation-duration="300"
+  />
+</template>`;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const iconItems = document.querySelectorAll('.icon-item');
+    const searchInput = document.getElementById('icon-search');
+    const clearSearchBtn = document.getElementById('clear-search');
+    const categoryFilters = document.querySelectorAll('.category-filter');
+    const iconsGrid = document.getElementById('icons-grid');
+    let currentCategory = 'all';
+    let currentSearch = '';
+
+    // Add "No results" message element
+    const noResults = document.createElement('div');
+    noResults.className = 'no-results';
+    noResults.style.display = 'none';
+    noResults.innerHTML = '<h3>No icons found</h3><p>Try adjusting your search or filter</p>';
+    iconsGrid.parentNode.insertBefore(noResults, iconsGrid.nextSibling);
+
+    // Filter icons function
+    function filterIcons() {
+      let visibleCount = 0;
+
+      iconItems.forEach((item) => {
+        const iconName = item.getAttribute('data-icon-name') || '';
+        const category = item.getAttribute('data-category') || '';
+        const matchesSearch =
+          !currentSearch || iconName.toLowerCase().includes(currentSearch.toLowerCase());
+        const matchesCategory = currentCategory === 'all' || category === currentCategory;
+
+        if (matchesSearch && matchesCategory) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+        iconsGrid.style.display = 'none';
+      } else {
+        noResults.style.display = 'none';
+        iconsGrid.style.display = 'grid';
+      }
+    }
+
+    // Search input handler
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value.trim();
+        filterIcons();
+
+        // Show/hide clear button
+        if (currentSearch) {
+          clearSearchBtn.style.display = 'flex';
+        } else {
+          clearSearchBtn.style.display = 'none';
+        }
+      });
+    }
+
+    // Clear search handler
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          currentSearch = '';
+          clearSearchBtn.style.display = 'none';
+          filterIcons();
+        }
+      });
+    }
+
+    // Category filter handlers
+    categoryFilters.forEach((filter) => {
+      filter.addEventListener('click', () => {
+        // Update active state
+        categoryFilters.forEach((f) => f.classList.remove('active'));
+        filter.classList.add('active');
+
+        // Update current category
+        currentCategory = filter.getAttribute('data-category') || 'all';
+        filterIcons();
+      });
     });
-    
-    item.addEventListener('mouseleave', () => {
-      const svg = item.querySelector('svg');
-      svg.style.transform = '';
+
+    iconItems.forEach((item) => {
+      const iconName = item.getAttribute('data-icon-name');
+      if (iconName) {
+        // Set the full copy text
+        const copyText = getIconCopyText(iconName);
+        item.setAttribute('data-copy-text', copyText);
+      }
+
+      // Copy functionality
+      item.addEventListener('click', async () => {
+        const copyText = item.getAttribute('data-copy-text');
+        if (!copyText) return;
+
+        try {
+          await navigator.clipboard.writeText(copyText);
+
+          // Visual feedback
+          item.classList.add('copied');
+
+          // Remove the copied class after animation
+          setTimeout(() => {
+            item.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy:', err);
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = copyText;
+          textArea.style.position = 'fixed';
+          textArea.style.opacity = '0';
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            item.classList.add('copied');
+            setTimeout(() => {
+              item.classList.remove('copied');
+            }, 2000);
+          } catch (fallbackErr) {
+            console.error('Fallback copy failed:', fallbackErr);
+          }
+          document.body.removeChild(textArea);
+        }
+      });
     });
   });
 </script>
-

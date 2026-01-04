@@ -16,51 +16,53 @@
         <li><a href="/docs" class="active">Introduction</a></li>
         <li><a href="/docs/installation">Installation</a></li>
         <li><a href="/docs/quick-start">Quick Start</a></li>
-        <li><a href="/docs/nuxt">Nuxt Module</a></li>
+        <li><a href="/docs/api">API Reference</a></li>
       </ul>
 
-      <h4>Usage</h4>
+      <h4>Guides</h4>
       <ul class="docs-nav">
-        <li><a href="/docs/usage">Basic Usage</a></li>
-        <li><a href="/docs/props">Props & Options</a></li>
-        <li><a href="/docs/animations">Animations</a></li>
-        <li><a href="/docs/customization">Customization</a></li>
-        <li><a href="/docs/typescript">TypeScript</a></li>
-      </ul>
-
-      <h4>Components</h4>
-      <ul class="docs-nav">
-        <li><a href="/docs/icons/arrows">Arrows</a></li>
-        <li><a href="/docs/icons/actions">Actions</a></li>
-        <li><a href="/docs/icons/media">Media</a></li>
-        <li><a href="/docs/icons/loaders">Loaders</a></li>
-        <li><a href="/docs/icons">All Icons →</a></li>
-      </ul>
-
-      <h4>Integrations</h4>
-      <ul class="docs-nav">
-        <li><a href="/docs/integrations/shadcn-vue">shadcn-vue</a></li>
-        <li><a href="/docs/integrations/tailwind">Tailwind CSS</a></li>
-        <li><a href="/docs/integrations/vite">Vite</a></li>
+        <li><a href="/docs/animations">Animation Guide</a></li>
+        <li><a href="/docs/examples">Examples Gallery</a></li>
       </ul>
     </aside>
 
     <main class="docs-content">
       <h2>Introduction</h2>
-      <p>Hovue is a collection of beautifully crafted, animated icons for Vue 3 and Nuxt 3 applications. Each icon is built as a standalone Vue component with motion baked in.</p>
+      <p>
+        Hovue is a collection of beautifully crafted, animated icons for Vue 3 and Nuxt 3
+        applications. Each icon is built as a standalone Vue component with motion baked in.
+      </p>
 
       <h3>Key Features</h3>
-      <p>Unlike static icon libraries, Hovue icons are designed with animation as a first-class citizen. Every icon includes thoughtfully crafted hover states, click feedback, and programmatic animation triggers.</p>
+      <p>
+        Unlike static icon libraries, Hovue icons are designed with animation as a first-class
+        citizen. Every icon includes thoughtfully crafted hover states, click feedback, and
+        programmatic animation triggers.
+      </p>
 
       <div class="docs-code">
-        <span style="color: var(--text-muted);">// Import individual icons</span><br>
-        <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);">HoArrowRight</span>, <span style="color: var(--orange);">HoCheck</span> &#125; <span style="color: var(--purple);">from</span> <span style="color: var(--cyan);">'hovue'</span><br><br>
-        <span style="color: var(--text-muted);">// Use in your template</span><br>
-        &lt;<span style="color: var(--orange);">HoArrowRight</span> <br>
-        &nbsp;&nbsp;<span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);">"24"</span><br>
-        &nbsp;&nbsp;<span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);">"currentColor"</span><br>
-        &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);">"slide"</span><br>
-        &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span style="color: var(--cyan);">"300"</span><br>
+        <span style="color: var(--text-muted);">// Import individual icons</span><br />
+        <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);"
+          >HoArrowRight</span
+        >, <span style="color: var(--orange);">HoCheck</span> &#125; <span
+          style="color: var(--purple);">from</span
+        >
+        <span style="color: var(--cyan);">'hovue'</span><br /><br />
+        <span style="color: var(--text-muted);">// Use in your template</span><br />
+        &lt;<span style="color: var(--orange);">HoArrowRight</span>
+        <br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);"
+          >"24"</span
+        ><br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);"
+          >"currentColor"</span
+        ><br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span
+          style="color: var(--cyan);">"slide"</span
+        ><br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+          style="color: var(--cyan);">"300"</span
+        ><br />
         /&gt;
       </div>
 
@@ -68,9 +70,11 @@
       <p>Using Nuxt? Icons are auto-imported automatically when you add the module.</p>
 
       <div class="docs-code">
-        <span style="color: var(--text-muted);">// nuxt.config.ts</span><br>
-        <span style="color: var(--purple);">export default</span> defineNuxtConfig(&#123;<br>
-        &nbsp;&nbsp;<span style="color: var(--pink);">modules</span>: [<span style="color: var(--cyan);">'hovue/nuxt'</span>]<br>
+        <span style="color: var(--text-muted);">// nuxt.config.ts</span><br />
+        <span style="color: var(--purple);">export default</span> defineNuxtConfig(&#123;<br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">modules</span>: [<span
+          style="color: var(--cyan);">'hovue/nuxt'</span
+        >]<br />
         &#125;)
       </div>
     </main>
@@ -214,10 +218,9 @@
     .docs-preview {
       grid-template-columns: 1fr;
     }
-    
+
     .docs-sidebar {
       display: none;
     }
   }
 </style>
-

@@ -6,68 +6,90 @@
   <div class="section-header animate-on-scroll">
     <span class="section-label">Installation</span>
     <h2 class="section-title">Get started in seconds</h2>
-    <p class="section-desc">Install via your favorite package manager and start using immediately.</p>
+    <p class="section-desc">
+      Install via your favorite package manager and start using immediately.
+    </p>
   </div>
 
   <div class="install-grid">
     <div class="install-card animate-on-scroll">
       <div class="install-card-header">
         <h4>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 17l6-6-6-6M12 19h8"/>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 17l6-6-6-6M12 19h8"></path>
           </svg>
           npm
         </h4>
         <button class="copy-btn" data-copy="npm install hovue">Copy</button>
       </div>
-      <div class="install-card-body">
-        npm install hovue
-      </div>
+      <div class="install-card-body">npm install hovue</div>
     </div>
 
     <div class="install-card animate-on-scroll">
       <div class="install-card-header">
         <h4>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 17l6-6-6-6M12 19h8"/>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 17l6-6-6-6M12 19h8"></path>
           </svg>
           pnpm
         </h4>
         <button class="copy-btn" data-copy="pnpm add hovue">Copy</button>
       </div>
-      <div class="install-card-body">
-        pnpm add hovue
-      </div>
+      <div class="install-card-body">pnpm add hovue</div>
     </div>
 
     <div class="install-card animate-on-scroll">
       <div class="install-card-header">
         <h4>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 17l6-6-6-6M12 19h8"/>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 17l6-6-6-6M12 19h8"></path>
           </svg>
           yarn
         </h4>
         <button class="copy-btn" data-copy="yarn add hovue">Copy</button>
       </div>
-      <div class="install-card-body">
-        yarn add hovue
-      </div>
+      <div class="install-card-body">yarn add hovue</div>
     </div>
 
     <div class="install-card animate-on-scroll">
       <div class="install-card-header">
         <h4>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 17l6-6-6-6M12 19h8"/>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 17l6-6-6-6M12 19h8"></path>
           </svg>
           bun
         </h4>
         <button class="copy-btn" data-copy="bun add hovue">Copy</button>
       </div>
-      <div class="install-card-body">
-        bun add hovue
-      </div>
+      <div class="install-card-body">bun add hovue</div>
     </div>
   </div>
 </section>
@@ -179,30 +201,32 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const copyButtons = document.querySelectorAll('.copy-btn');
-    
-    copyButtons.forEach(button => {
+
+    copyButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const text = button.getAttribute('data-copy');
         if (text) {
-          navigator.clipboard.writeText(text).then(() => {
-            const originalText = button.textContent;
-            button.textContent = 'Copied!';
-            button.style.background = 'var(--primary)';
-            button.style.color = 'white';
-            button.style.borderColor = 'var(--primary)';
-            
-            setTimeout(() => {
-              button.textContent = originalText;
-              button.style.background = '';
-              button.style.color = '';
-              button.style.borderColor = '';
-            }, 2000);
-          }).catch(() => {
-            alert('Failed to copy to clipboard');
-          });
+          navigator.clipboard
+            .writeText(text)
+            .then(() => {
+              const originalText = button.textContent;
+              button.textContent = 'Copied!';
+              button.style.background = 'var(--primary)';
+              button.style.color = 'white';
+              button.style.borderColor = 'var(--primary)';
+
+              setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+                button.style.color = '';
+                button.style.borderColor = '';
+              }, 2000);
+            })
+            .catch(() => {
+              alert('Failed to copy to clipboard');
+            });
         }
       });
     });
   });
 </script>
-

@@ -4,32 +4,56 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 export async function getStaticPaths() {
-  return [
-    { params: { '404': undefined } },
-  ];
+  return [{ params: { '404': undefined } }];
 }
 ---
 
-<BaseLayout 
+<BaseLayout
   title="Coming Soon - Hovue"
   description="This page is under construction. We're working hard to bring you amazing content!"
 >
   <Navigation />
-  
+
   <main class="not-found">
     <div class="container">
       <div class="content">
         <div class="illustration">
-          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="80" stroke="var(--border)" stroke-width="2" fill="var(--bg-card)"/>
-            <path d="M70 100L90 120L130 80" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="100" cy="100" r="60" stroke="var(--primary)" stroke-width="2" stroke-dasharray="4 4" opacity="0.3"/>
+          <svg
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="100"
+              cy="100"
+              r="80"
+              stroke="var(--border)"
+              stroke-width="2"
+              fill="var(--bg-card)"></circle>
+            <path
+              d="M70 100L90 120L130 80"
+              stroke="var(--primary)"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <circle
+              cx="100"
+              cy="100"
+              r="60"
+              stroke="var(--primary)"
+              stroke-width="2"
+              stroke-dasharray="4 4"
+              opacity="0.3"></circle>
           </svg>
         </div>
-        
+
         <h1>Coming Soon</h1>
-        <p class="subtitle">This page is under construction. We're working hard to bring you amazing content!</p>
-        
+        <p class="subtitle">
+          This page is under construction. We're working hard to bring you amazing content!
+        </p>
+
         <div class="actions">
           <a href="/" class="btn btn-primary">Go Home</a>
           <a href="/docs" class="btn btn-ghost">View Docs</a>
@@ -93,4 +117,3 @@ export async function getStaticPaths() {
     }
   }
 </style>
-

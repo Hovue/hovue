@@ -1,0 +1,978 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+const iconCategories = {
+  arrows: [
+    { name: 'HoArrowRight', description: 'Right-pointing arrow' },
+    { name: 'HoArrowLeft', description: 'Left-pointing arrow' },
+    { name: 'HoArrowUp', description: 'Up-pointing arrow' },
+    { name: 'HoArrowDown', description: 'Down-pointing arrow' },
+    { name: 'HoChevronRight', description: 'Right chevron' },
+    { name: 'HoChevronDown', description: 'Down chevron' },
+  ],
+  actions: [
+    { name: 'HoCheck', description: 'Checkmark icon' },
+    { name: 'HoX', description: 'Close/X icon' },
+    { name: 'HoPlus', description: 'Plus/add icon' },
+    { name: 'HoMinus', description: 'Minus/remove icon' },
+    { name: 'HoSearch', description: 'Search icon' },
+    { name: 'HoMenu', description: 'Menu/hamburger icon' },
+  ],
+  ui: [
+    { name: 'HoHome', description: 'Home icon' },
+    { name: 'HoUser', description: 'User/profile icon' },
+    { name: 'HoSettings', description: 'Settings/gear icon' },
+    { name: 'HoBell', description: 'Notification bell' },
+    { name: 'HoMail', description: 'Mail/email icon' },
+    { name: 'HoHeart', description: 'Heart/favorite icon' },
+  ],
+  media: [
+    { name: 'HoPlay', description: 'Play button' },
+    { name: 'HoPause', description: 'Pause button' },
+    { name: 'HoVolume', description: 'Volume/sound icon' },
+    { name: 'HoCamera', description: 'Camera icon' },
+    { name: 'HoImage', description: 'Image/picture icon' },
+    { name: 'HoMusic', description: 'Music icon' },
+  ],
+  files: [
+    { name: 'HoFile', description: 'File document' },
+    { name: 'HoFolder', description: 'Folder icon' },
+    { name: 'HoCopy', description: 'Copy icon' },
+    { name: 'HoTrash', description: 'Trash/delete icon' },
+    { name: 'HoDownload', description: 'Download icon' },
+    { name: 'HoUpload', description: 'Upload icon' },
+  ],
+  loaders: [
+    { name: 'HoLoader', description: 'Loading spinner' },
+    { name: 'HoRefresh', description: 'Refresh/reload icon' },
+    { name: 'HoSync', description: 'Sync icon' },
+    { name: 'HoClock', description: 'Clock/time icon' },
+    { name: 'HoCalendar', description: 'Calendar icon' },
+    { name: 'HoStar', description: 'Star icon' },
+  ],
+};
+---
+
+<DocsLayout
+  title="Examples Gallery - Hovue"
+  description="Browse code examples for all Hovue icons. See how to use each icon with different props and animations."
+  prev={{ url: '/docs/animations', title: 'Animation Guide' }}
+>
+  <h1>Examples Gallery</h1>
+
+  <p>
+    Browse code examples for all Hovue icons. Each example shows the icon name, description, and a
+    complete code snippet you can copy and use in your project.
+  </p>
+
+  <h2>Visual Examples</h2>
+
+  <div class="visual-examples">
+    <div class="visual-example-card">
+      <h3>Button with Icon</h3>
+      <div class="visual-demo">
+        <button class="demo-button">
+          Next
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="docs-code">
+        &lt;<span style="color: var(--purple);">template</span>&gt;<br />
+        &nbsp;&nbsp;&lt;<span style="color: var(--orange);">button</span>
+        <span style="color: var(--pink);">class</span>=<span style="color: var(--cyan);">"btn"</span
+        >&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;Next<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: var(--orange);">HoArrowRight</span>
+        <span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);">"20"</span> /&gt;<br
+        />
+        &nbsp;&nbsp;&lt;/<span style="color: var(--orange);">button</span>&gt;<br />
+        &lt;/<span style="color: var(--purple);">template</span>&gt;
+      </div>
+    </div>
+
+    <div class="visual-example-card">
+      <h3>Loading State</h3>
+      <div class="visual-demo">
+        <div class="demo-loader">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 12a9 9 0 11-6.219-8.56"></path>
+          </svg>
+          <span>Loading...</span>
+        </div>
+      </div>
+      <div class="docs-code">
+        &lt;<span style="color: var(--orange);">HoLoader</span><br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">v-if</span>=<span style="color: var(--cyan);"
+          >"isLoading"</span
+        ><br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span
+          style="color: var(--cyan);">"rotate"</span
+        ><br />
+        &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+          style="color: var(--cyan);">"1000"</span
+        ><br />
+        /&gt;
+      </div>
+    </div>
+
+    <div class="visual-example-card">
+      <h3>Status Icons</h3>
+      <div class="visual-demo">
+        <div class="demo-status">
+          <div class="status-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+            <span>Success</span>
+          </div>
+          <div class="status-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+            <span>Error</span>
+          </div>
+        </div>
+      </div>
+      <div class="docs-code">
+        &lt;<span style="color: var(--orange);">HoCheck</span>
+        <span style="color: var(--pink);">v-if</span>=<span style="color: var(--cyan);"
+          >"isComplete"</span
+        > /&gt;<br />
+        &lt;<span style="color: var(--orange);">HoX</span>
+        <span style="color: var(--pink);">v-else</span> /&gt;
+      </div>
+    </div>
+
+    <div class="visual-example-card">
+      <h3>Navigation Menu</h3>
+      <div class="visual-demo">
+        <nav class="demo-nav">
+          <a href="#" class="nav-item">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+            </svg>
+            <span>Home</span>
+          </a>
+          <a href="#" class="nav-item">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="7" r="4"></circle>
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+            </svg>
+            <span>Profile</span>
+          </a>
+          <a href="#" class="nav-item">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="M22 6l-10 7L2 6"></path>
+            </svg>
+            <span>Messages</span>
+          </a>
+        </nav>
+      </div>
+      <div class="docs-code">
+        &lt;<span style="color: var(--purple);">template</span>&gt;<br />
+        &nbsp;&nbsp;&lt;<span style="color: var(--orange);">nav</span>&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: var(--orange);">a</span>
+        <span style="color: var(--pink);">href</span>=<span style="color: var(--cyan);">"#"</span
+        >&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: var(--orange);">HoHome</span> /&gt;
+        Home<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: var(--orange);">a</span>&gt;<br />
+        &nbsp;&nbsp;&lt;/<span style="color: var(--orange);">nav</span>&gt;<br />
+        &lt;/<span style="color: var(--purple);">template</span>&gt;
+      </div>
+    </div>
+  </div>
+
+  {
+    Object.entries(iconCategories).map(([category, icons]) => {
+      const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+      return (
+        <section>
+          <h2>{categoryName} Icons</h2>
+
+          <div class="examples-grid">
+            {icons.map((icon) => (
+              <div class="example-card">
+                <div class="example-preview">
+                  <div class="icon-preview">
+                    {icon.name === 'HoArrowRight' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoArrowLeft' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoArrowUp' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M12 19V5M5 12l7-7 7 7" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoArrowDown' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoChevronRight' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoChevronDown' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoCheck' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoX' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M18 6L6 18M6 6l12 12" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoPlus' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M12 5v14M5 12h14" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoMinus' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M5 12h14" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoSearch' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoMenu' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoHome' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                        <path d="M9 22V12h6v10" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoUser' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="7" r="4" />
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoSettings' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoBell' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoMail' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="M22 6l-10 7L2 6" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoHeart' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoPlay' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polygon points="5,3 19,12 5,21" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoPause' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="6" y="4" width="4" height="16" />
+                        <rect x="14" y="4" width="4" height="16" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoVolume' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" />
+                        <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoCamera' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoImage' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <path d="M21 15l-5-5L5 21" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoMusic' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M9 18V5l12-2v13" />
+                        <circle cx="6" cy="18" r="3" />
+                        <circle cx="18" cy="16" r="3" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoFile' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                        <polyline points="14,2 14,8 20,8" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoFolder' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoCopy' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoTrash' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="3,6 5,6 21,6" />
+                        <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoDownload' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                        <polyline points="7,10 12,15 17,10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoUpload' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                        <polyline points="17,8 12,3 7,8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoLoader' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M21 12a9 9 0 11-6.219-8.56" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoRefresh' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M23 4v6h-6M1 20v-6h6" />
+                        <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoSync' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="23,4 23,10 17,10" />
+                        <polyline points="1,20 1,14 7,14" />
+                        <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoClock' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12,6 12,12 16,14" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoCalendar' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                      </svg>
+                    )}
+                    {icon.name === 'HoStar' && (
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2" />
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                <h3>{icon.name}</h3>
+                <p>{icon.description}</p>
+
+                <div class="example-code">
+                  <span style="color: var(--text-muted);">// Basic usage</span>
+                  <br />
+                  <span style="color: var(--purple);">import</span> &#123;{' '}
+                  <span style="color: var(--orange);">{icon.name}</span> &#125;{' '}
+                  <span style="color: var(--purple);">from</span>{' '}
+                  <span style="color: var(--cyan);">'hovue'</span>
+                  <br />
+                  <br />
+                  &lt;<span style="color: var(--orange);">{icon.name}</span> /&gt;
+                  <br />
+                  <br />
+                  <span style="color: var(--text-muted);">// With props</span>
+                  <br />
+                  &lt;<span style="color: var(--orange);">{icon.name}</span>
+                  <br />
+                  &nbsp;&nbsp;<span style="color: var(--pink);">:size</span>=
+                  <span style="color: var(--cyan);">"24"</span>
+                  <br />
+                  &nbsp;&nbsp;<span style="color: var(--pink);">color</span>=
+                  <span style="color: var(--cyan);">"currentColor"</span>
+                  <br />
+                  &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=
+                  <span style="color: var(--cyan);">"slide"</span>
+                  <br />
+                  &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=
+                  <span style="color: var(--cyan);">"300"</span>
+                  <br />
+                  /&gt;
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    })
+  }
+</DocsLayout>
+
+<style>
+  .examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .visual-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .visual-example-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all 0.2s ease;
+  }
+
+  .visual-example-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .visual-example-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    margin-top: 0;
+    color: var(--text-primary);
+  }
+
+  .visual-demo {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+  }
+
+  .demo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .demo-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 151, 149, 0.3);
+  }
+
+  .demo-loader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .demo-loader svg {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .demo-status {
+    display: flex;
+    gap: var(--spacing-lg);
+  }
+
+  .status-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+  }
+
+  .status-item:first-child svg {
+    color: #10b981;
+  }
+
+  .status-item:last-child svg {
+    color: #ef4444;
+  }
+
+  .demo-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+  }
+
+  .nav-item:hover {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  .example-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all 0.2s ease;
+  }
+
+  .example-preview {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .icon-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--primary);
+  }
+
+  .icon-preview svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .example-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+
+  :global(.dark) .example-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .example-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    margin-top: 0;
+    color: var(--text-primary);
+  }
+
+  .example-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+  }
+
+  .example-code {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.75rem;
+    line-height: 1.8;
+    overflow-x: auto;
+    position: relative;
+  }
+
+  .example-code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .example-code span {
+    display: inline;
+  }
+
+  :global(.dark) .example-code {
+    background: #1a202c;
+    border-color: #2d3748;
+  }
+
+  @media (max-width: 768px) {
+    .examples-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,186 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Quick Start - Hovue"
+  description="Get up and running with Hovue in minutes. Learn the basics of using animated icons in your Vue project."
+  prev={{ url: '/docs/installation', title: 'Installation' }}
+  next={{ url: '/docs/api', title: 'API Reference' }}
+>
+  <h1>Quick Start</h1>
+
+  <p>
+    This guide will help you get started with Hovue in just a few minutes. We'll cover the basics of
+    importing and using animated icons in your Vue components.
+  </p>
+
+  <h2>Basic Usage</h2>
+
+  <p>The simplest way to use a Hovue icon:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--purple);">template</span>&gt;<br />
+    &nbsp;&nbsp;&lt;<span style="color: var(--orange);">HoArrowRight</span> /&gt;<br />
+    &lt;/<span style="color: var(--purple);">template</span>&gt;<br /><br />
+    &lt;<span style="color: var(--purple);">script</span>
+    <span style="color: var(--pink);">setup</span>&gt;<br />
+    <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);"
+      >HoArrowRight</span
+    > &#125; <span style="color: var(--purple);">from</span>
+    <span style="color: var(--cyan);">'hovue'</span><br />
+    &lt;/<span style="color: var(--purple);">script</span>&gt;
+  </div>
+
+  <h2>Customizing Size</h2>
+
+  <p>Control the icon size using the <code>:size</code> prop:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);">"24"</span> /&gt;<br
+    />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);">"48"</span> /&gt;<br
+    />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);">"64"</span> /&gt;
+  </div>
+
+  <h2>Changing Color</h2>
+
+  <p>Set the icon color with the <code>color</code> prop:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);"
+      >"currentColor"</span
+    > /&gt;<br />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);">"#319795"</span
+    > /&gt;<br />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);"
+      >"rgb(49, 151, 149)"</span
+    > /&gt;
+  </div>
+
+  <h2>Animations</h2>
+
+  <p>Icons come with built-in animations. Choose from various animation types:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"slide"</span
+    ><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+      style="color: var(--cyan);">"300"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <p>
+    Available animations: <code>slide</code>, <code>bounce</code>, <code>rotate</code>, <code
+      >pulse</code
+    >, <code>fade</code>
+  </p>
+
+  <h2>Complete Example</h2>
+
+  <p>Here's a complete example using multiple props:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--purple);">template</span>&gt;<br />
+    &nbsp;&nbsp;&lt;<span style="color: var(--orange);">HoArrowRight</span><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: var(--pink);">:size</span>=<span
+      style="color: var(--cyan);">"24"</span
+    ><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: var(--pink);">color</span>=<span
+      style="color: var(--cyan);">"currentColor"</span
+    ><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span
+      style="color: var(--cyan);">"slide"</span
+    ><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+      style="color: var(--cyan);">"300"</span
+    ><br />
+    &nbsp;&nbsp;/&gt;<br />
+    &lt;/<span style="color: var(--purple);">template</span>&gt;<br /><br />
+    &lt;<span style="color: var(--purple);">script</span>
+    <span style="color: var(--pink);">setup</span>&gt;<br />
+    <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);"
+      >HoArrowRight</span
+    > &#125; <span style="color: var(--purple);">from</span>
+    <span style="color: var(--cyan);">'hovue'</span><br />
+    &lt;/<span style="color: var(--purple);">script</span>&gt;
+  </div>
+
+  <h2>Using in Buttons</h2>
+
+  <p>Icons work great in buttons and interactive elements:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--purple);">template</span>&gt;<br />
+    &nbsp;&nbsp;&lt;<span style="color: var(--orange);">button</span>
+    <span style="color: var(--pink);">class</span>=<span style="color: var(--cyan);">"btn"</span
+    >&gt;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Next<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);">"20"</span> /&gt;<br
+    />
+    &nbsp;&nbsp;&lt;/<span style="color: var(--orange);">button</span>&gt;<br />
+    &lt;/<span style="color: var(--purple);">template</span>&gt;
+  </div>
+
+  <h2>Conditional Rendering</h2>
+
+  <p>Use icons conditionally with Vue's <code>v-if</code>:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoCheck</span>
+    <span style="color: var(--pink);">v-if</span>=<span style="color: var(--cyan);"
+      >"isComplete"</span
+    > /&gt;<br />
+    &lt;<span style="color: var(--orange);">HoLoader</span>
+    <span style="color: var(--pink);">v-else</span> /&gt;
+  </div>
+
+  <h2>Dynamic Icons</h2>
+
+  <p>Use dynamic component binding for dynamic icon selection:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--purple);">template</span>&gt;<br />
+    &nbsp;&nbsp;&lt;<span style="color: var(--purple);">component</span>
+    <span style="color: var(--pink);">:is</span>=<span style="color: var(--cyan);"
+      >"selectedIcon"</span
+    > /&gt;<br />
+    &lt;/<span style="color: var(--purple);">template</span>&gt;<br /><br />
+    &lt;<span style="color: var(--purple);">script</span>
+    <span style="color: var(--pink);">setup</span>&gt;<br />
+    <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);"
+      >ref</span
+    > &#125; <span style="color: var(--purple);">from</span>
+    <span style="color: var(--cyan);">'vue'</span><br />
+    <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);"
+      >HoArrowRight</span
+    >, <span style="color: var(--orange);">HoCheck</span> &#125; <span style="color: var(--purple);"
+      >from</span
+    >
+    <span style="color: var(--cyan);">'hovue'</span><br /><br />
+    <span style="color: var(--purple);">const</span>
+    <span style="color: var(--orange);">selectedIcon</span> = <span style="color: var(--orange);"
+      >ref</span
+    >(<span style="color: var(--orange);">HoArrowRight</span>)<br />
+    &lt;/<span style="color: var(--purple);">script</span>&gt;
+  </div>
+
+  <h2>Next Steps</h2>
+
+  <p>
+    Now that you know the basics, explore the <a href="/docs/api">API Reference</a> for all available
+    props, or check out the <a href="/docs/animations">Animation Guide</a> to learn about all animation
+    options.
+  </p>
+</DocsLayout>

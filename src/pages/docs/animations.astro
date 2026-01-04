@@ -1,0 +1,190 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Animation Guide - Hovue"
+  description="Learn how to use animations with Hovue icons. Explore all available animation types and how to customize them."
+  prev={{ url: '/docs/api', title: 'API Reference' }}
+  next={{ url: '/docs/examples', title: 'Examples Gallery' }}
+>
+  <h1>Animation Guide</h1>
+
+  <p>
+    Hovue icons come with built-in animations that bring your interface to life. This guide covers
+    all available animation types and how to customize them.
+  </p>
+
+  <h2>Animation Types</h2>
+
+  <p>Hovue supports five animation types, each designed for different use cases:</p>
+
+  <h3>Slide</h3>
+  <p>
+    The <code>slide</code> animation moves the icon in a direction. Perfect for arrows and navigation
+    elements.
+  </p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"slide"</span
+    ><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+      style="color: var(--cyan);">"300"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h3>Bounce</h3>
+  <p>
+    The <code>bounce</code> animation creates a playful bounce effect. Great for success states and attention-grabbing
+    elements.
+  </p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoCheck</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"bounce"</span
+    ><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+      style="color: var(--cyan);">"400"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h3>Rotate</h3>
+  <p>
+    The <code>rotate</code> animation spins the icon. Ideal for loading states and refresh indicators.
+  </p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoRefresh</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"rotate"</span
+    ><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+      style="color: var(--cyan);">"1000"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h3>Pulse</h3>
+  <p>
+    The <code>pulse</code> animation creates a subtle pulsing effect. Perfect for notifications and alerts.
+  </p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoBell</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"pulse"</span
+    ><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+      style="color: var(--cyan);">"1500"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h3>Fade</h3>
+  <p>
+    The <code>fade</code> animation creates a smooth fade in/out effect. Great for transitions and state
+    changes.
+  </p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoHeart</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"fade"</span
+    ><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">:animation-duration</span>=<span
+      style="color: var(--cyan);">"500"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h2>Animation Duration</h2>
+
+  <p>
+    Control the speed of animations using the <code>animation-duration</code> prop. Duration is specified
+    in milliseconds.
+  </p>
+
+  <div class="docs-code">
+    <span style="color: var(--text-muted);">// Fast animation (200ms)</span><br />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:animation-duration</span>=<span style="color: var(--cyan);"
+      >"200"</span
+    > /&gt;<br /><br />
+    <span style="color: var(--text-muted);">// Medium animation (300ms - default)</span><br />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:animation-duration</span>=<span style="color: var(--cyan);"
+      >"300"</span
+    > /&gt;<br /><br />
+    <span style="color: var(--text-muted);">// Slow animation (600ms)</span><br />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:animation-duration</span>=<span style="color: var(--cyan);"
+      >"600"</span
+    > /&gt;
+  </div>
+
+  <h2>Triggering Animations</h2>
+
+  <h3>On Hover</h3>
+  <p>Animations can be triggered on hover by default:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"slide"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h3>On Click</h3>
+  <p>Trigger animations programmatically on click:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoRefresh</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"rotate"</span
+    ><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">@click</span>=<span style="color: var(--cyan);"
+      >"triggerAnimation"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h3>Conditional Animations</h3>
+  <p>Use animations conditionally based on state:</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoLoader</span><br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">:animation</span>=<span
+      style="color: var(--cyan);">"isLoading ? 'rotate' : 'none'"</span
+    ><br />
+    /&gt;
+  </div>
+
+  <h2>Best Practices</h2>
+
+  <ul>
+    <li>
+      <strong>Use appropriate animations:</strong> Match animation types to the icon's purpose (e.g.,
+      rotate for loaders, slide for arrows).
+    </li>
+    <li>
+      <strong>Keep durations reasonable:</strong> 200-600ms is usually ideal. Too fast feels jarring,
+      too slow feels sluggish.
+    </li>
+    <li>
+      <strong>Don't overuse:</strong> Too many animated icons can be distracting. Use animations strategically.
+    </li>
+    <li>
+      <strong>Consider accessibility:</strong> Respect <code>prefers-reduced-motion</code> when possible.
+    </li>
+  </ul>
+
+  <h2>Examples</h2>
+
+  <p>Check out the <a href="/docs/examples">Examples Gallery</a> to see animations in action.</p>
+</DocsLayout>

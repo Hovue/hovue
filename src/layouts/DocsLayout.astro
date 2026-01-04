@@ -1,0 +1,416 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import DocsNav from '../components/DocsNav.vue';
+
+interface Props {
+  title?: string;
+  description?: string;
+  prev?: { url: string; title: string };
+  next?: { url: string; title: string };
+}
+
+const {
+  title = 'Documentation - Hovue',
+  description = 'Complete documentation for Hovue - animated Vue icons library.',
+  prev,
+  next,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Navigation />
+
+  <div style="padding-top: 80px; min-height: 100vh;">
+    <div class="docs-container">
+      <aside class="docs-sidebar-wrapper">
+        <div class="docs-sidebar">
+          <h4>Getting Started</h4>
+          <ul class="docs-nav">
+            <li>
+              <a href="/docs" class={Astro.url.pathname === '/docs' ? 'active' : ''}>Introduction</a
+              >
+            </li>
+            <li>
+              <a
+                href="/docs/installation"
+                class={Astro.url.pathname === '/docs/installation' ? 'active' : ''}>Installation</a
+              >
+            </li>
+            <li>
+              <a
+                href="/docs/quick-start"
+                class={Astro.url.pathname === '/docs/quick-start' ? 'active' : ''}>Quick Start</a
+              >
+            </li>
+            <li>
+              <a href="/docs/api" class={Astro.url.pathname === '/docs/api' ? 'active' : ''}
+                >API Reference</a
+              >
+            </li>
+          </ul>
+
+          <h4>Guides</h4>
+          <ul class="docs-nav">
+            <li>
+              <a
+                href="/docs/animations"
+                class={Astro.url.pathname === '/docs/animations' ? 'active' : ''}>Animation Guide</a
+              >
+            </li>
+            <li>
+              <a
+                href="/docs/examples"
+                class={Astro.url.pathname === '/docs/examples' ? 'active' : ''}>Examples Gallery</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="docs-content">
+        <slot />
+        <DocsNav client:load prev={prev} next={next} />
+      </main>
+    </div>
+  </div>
+
+  <div class="docs-footer-spacer"></div>
+
+  <Footer />
+</BaseLayout>
+
+<style is:global>
+  .docs-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    min-height: calc(100vh - 200px);
+    align-items: start;
+  }
+
+  .docs-sidebar-wrapper {
+    background: var(--bg-dark);
+    border-right: 1px solid var(--border);
+    align-self: stretch;
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  .docs-sidebar {
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--spacing-xl);
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .docs-content {
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+    min-height: 100%;
+  }
+
+  .docs-footer-spacer {
+    height: var(--spacing-3xl);
+  }
+
+  .docs-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .docs-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .docs-sidebar::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+
+  .docs-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--border-hover);
+  }
+
+  .docs-sidebar h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .docs-nav {
+    list-style: none;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .docs-nav li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .docs-nav a {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+  }
+
+  .docs-nav a:hover,
+  .docs-nav a.active {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  .docs-nav a.active {
+    border-left: 2px solid var(--primary);
+    padding-left: calc(var(--spacing-md) - 2px);
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  .docs-content {
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+  }
+
+  .docs-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .docs-content > p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .docs-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: var(--spacing-xl) 0 var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .docs-code {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin: var(--spacing-md) 0;
+  }
+
+  /* Additional styles for docs pages (not in preview) */
+  .docs-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .docs-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: var(--spacing-xl) 0 var(--spacing-md);
+    color: var(--text-primary);
+  }
+
+  .docs-content p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .docs-content a {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .docs-content a:hover {
+    color: var(--primary-hover);
+    border-bottom-color: var(--primary-hover);
+  }
+
+  .docs-content code {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.125rem 0.375rem;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.875em;
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  .docs-content ul,
+  .docs-content ol {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+    line-height: 1.7;
+  }
+
+  .docs-content ul {
+    list-style-type: disc;
+  }
+
+  .docs-content ol {
+    list-style-type: decimal;
+  }
+
+  .docs-content li {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .docs-content li code {
+    font-size: 0.8125em;
+  }
+
+  .docs-content strong {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .docs-note {
+    background: rgba(49, 151, 149, 0.1);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    margin-left: 0;
+    margin-right: 0;
+    color: var(--text-secondary);
+    display: block;
+  }
+
+  .docs-note p {
+    margin-bottom: 0;
+  }
+
+  .docs-note strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+  }
+
+  .docs-warning {
+    background: rgba(237, 137, 54, 0.1);
+    border-left: 4px solid var(--orange);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    color: var(--text-secondary);
+  }
+
+  .docs-warning strong {
+    color: var(--orange);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+  }
+
+  :global(.dark) .docs-note {
+    background: rgba(49, 151, 149, 0.15);
+  }
+
+  :global(.dark) .docs-warning {
+    background: rgba(237, 137, 54, 0.15);
+  }
+
+  @media (max-width: 1024px) {
+    .docs-container {
+      grid-template-columns: 1fr;
+      padding: var(--spacing-md);
+    }
+
+    .docs-sidebar {
+      position: relative;
+      top: 0;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .docs-content {
+      padding: var(--spacing-lg);
+    }
+
+    .docs-content h1 {
+      font-size: 2rem;
+    }
+
+    .docs-content h2 {
+      font-size: 1.75rem;
+    }
+
+    .docs-content h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .docs-container {
+      padding: var(--spacing-sm);
+    }
+
+    .docs-content {
+      padding: var(--spacing-md);
+    }
+
+    .docs-code {
+      padding: var(--spacing-md);
+      font-size: 0.8125rem;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Prevent page flash on navigation
+  (function () {
+    // Ensure body is visible immediately
+    if (document.body) {
+      document.body.style.opacity = '1';
+    }
+
+    // Intercept docs navigation links
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="/docs"]');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || link.hasAttribute('download')) return;
+
+      // Allow normal navigation - browser handles it smoothly
+      // The key is ensuring no flash by having consistent styling
+    });
+  })();
+</script>

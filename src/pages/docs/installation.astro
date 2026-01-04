@@ -1,0 +1,129 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="Installation - Hovue"
+  description="Learn how to install Hovue in your Vue 3 or Nuxt 3 project."
+  prev={{ url: '/docs', title: 'Introduction' }}
+  next={{ url: '/docs/quick-start', title: 'Quick Start' }}
+>
+  <h1>Installation</h1>
+
+  <p>
+    Get started with Hovue in minutes. Choose the installation method that best fits your project.
+  </p>
+
+  <h2>Package Managers</h2>
+
+  <p>Install Hovue using your preferred package manager:</p>
+
+  <div class="docs-code">
+    <span style="color: var(--text-muted);"># npm</span><br />
+    <span style="color: var(--purple);">npm</span>
+    <span style="color: var(--orange);">install</span>
+    <span style="color: var(--cyan);">hovue</span><br /><br />
+    <span style="color: var(--text-muted);"># yarn</span><br />
+    <span style="color: var(--purple);">yarn</span>
+    <span style="color: var(--orange);">add</span>
+    <span style="color: var(--cyan);">hovue</span><br /><br />
+    <span style="color: var(--text-muted);"># pnpm</span><br />
+    <span style="color: var(--purple);">pnpm</span>
+    <span style="color: var(--orange);">add</span>
+    <span style="color: var(--cyan);">hovue</span><br /><br />
+    <span style="color: var(--text-muted);"># bun</span><br />
+    <span style="color: var(--purple);">bun</span>
+    <span style="color: var(--orange);">add</span>
+    <span style="color: var(--cyan);">hovue</span>
+  </div>
+
+  <h2>Vue 3</h2>
+
+  <p>For Vue 3 projects, import icons directly in your components:</p>
+
+  <div class="docs-code">
+    <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);"
+      >HoArrowRight</span
+    >, <span style="color: var(--orange);">HoCheck</span> &#125; <span style="color: var(--purple);"
+      >from</span
+    >
+    <span style="color: var(--cyan);">'hovue'</span><br /><br />
+    <span style="color: var(--purple);">export default</span> &#123;<br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">components</span>: &#123;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: var(--orange);">HoArrowRight</span>,<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: var(--orange);">HoCheck</span><br />
+    &nbsp;&nbsp;&#125;<br />
+    &#125;
+  </div>
+
+  <h2>Nuxt 3</h2>
+
+  <p>For Nuxt 3 projects, use the Nuxt module for auto-imports:</p>
+
+  <h3>1. Install the module</h3>
+
+  <div class="docs-code">
+    <span style="color: var(--purple);">npm</span>
+    <span style="color: var(--orange);">install</span>
+    <span style="color: var(--cyan);">hovue</span>
+    <span style="color: var(--cyan);">@hovue/nuxt</span>
+  </div>
+
+  <h3>2. Add to nuxt.config.ts</h3>
+
+  <div class="docs-code">
+    <span style="color: var(--purple);">export default</span> defineNuxtConfig(&#123;<br />
+    &nbsp;&nbsp;<span style="color: var(--pink);">modules</span>: [<span style="color: var(--cyan);"
+      >'@hovue/nuxt'</span
+    >]<br />
+    &#125;)
+  </div>
+
+  <p>That's it! Icons are now auto-imported and ready to use in your templates.</p>
+
+  <h2>Vite</h2>
+
+  <p>Hovue works seamlessly with Vite. No additional configuration needed.</p>
+
+  <div class="docs-note">
+    <strong>Note:</strong> Hovue requires Vue 3.3+ and supports both Composition API and Options API.
+  </div>
+
+  <h2>TypeScript</h2>
+
+  <p>TypeScript definitions are included. No additional setup required.</p>
+
+  <div class="docs-code">
+    <span style="color: var(--purple);">import</span>
+    <span style="color: var(--purple);">type</span> &#123; <span style="color: var(--orange);"
+      >IconProps</span
+    > &#125; <span style="color: var(--purple);">from</span>
+    <span style="color: var(--cyan);">'hovue'</span>
+  </div>
+
+  <h2>Tree Shaking</h2>
+
+  <p>Hovue is fully tree-shakeable. Only import the icons you use:</p>
+
+  <div class="docs-code">
+    <span style="color: var(--text-muted);">// ✅ Good - only imports what you need</span><br />
+    <span style="color: var(--purple);">import</span> &#123; <span style="color: var(--orange);"
+      >HoArrowRight</span
+    > &#125; <span style="color: var(--purple);">from</span>
+    <span style="color: var(--cyan);">'hovue'</span><br /><br />
+    <span style="color: var(--text-muted);">// ❌ Bad - imports entire library</span><br />
+    <span style="color: var(--purple);">import</span>
+    <span style="color: var(--orange);">*</span>
+    <span style="color: var(--purple);">as</span>
+    <span style="color: var(--orange);">Hovue</span>
+    <span style="color: var(--purple);">from</span>
+    <span style="color: var(--cyan);">'hovue'</span>
+  </div>
+
+  <h2>Next Steps</h2>
+
+  <p>
+    Now that you've installed Hovue, check out the <a href="/docs/quick-start">Quick Start</a> guide to
+    learn how to use icons in your project.
+  </p>
+</DocsLayout>

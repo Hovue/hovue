@@ -7,35 +7,42 @@
         <span class="code-dot"></span>
       </div>
       <div class="code-tabs">
-        <button 
-          :class="['code-tab', { active: activeTab === 'vue' }]"
-          @click="activeTab = 'vue'"
-        >
+        <button :class="['code-tab', { active: activeTab === 'vue' }]" @click="activeTab = 'vue'">
           App.vue
         </button>
-        <button 
-          :class="['code-tab', { active: activeTab === 'nuxt' }]"
-          @click="activeTab = 'nuxt'"
-        >
+        <button :class="['code-tab', { active: activeTab === 'nuxt' }]" @click="activeTab = 'nuxt'">
           nuxt.config.ts
         </button>
       </div>
     </div>
     <div class="code-content">
       <div v-if="activeTab === 'vue'">
-        <span class="keyword">&lt;script</span> <span class="prop">setup</span><span class="keyword">&gt;</span><br>
-        <span class="keyword">import</span> { <span class="component">HoArrowRight</span>, <span class="component">HoCheck</span>, <span class="component">HoLoader</span> } <span class="keyword">from</span> <span class="string">'hovue'</span><br>
-        <span class="keyword">&lt;/script&gt;</span><br><br>
-        <span class="keyword">&lt;template&gt;</span><br>
-        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoArrowRight</span> <span class="prop">:size</span>=<span class="string">"24"</span> <span class="prop">animation</span>=<span class="string">"slide"</span> <span class="keyword">/&gt;</span><br>
-        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoCheck</span> <span class="prop">:size</span>=<span class="string">"24"</span> <span class="prop">animation</span>=<span class="string">"bounce"</span> <span class="keyword">/&gt;</span><br>
-        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoLoader</span> <span class="prop">:size</span>=<span class="string">"24"</span> <span class="prop">animation</span>=<span class="string">"spin"</span> <span class="keyword">/&gt;</span><br>
+        <span class="keyword">&lt;script</span> <span class="prop">setup</span
+        ><span class="keyword">&gt;</span><br />
+        <span class="keyword">import</span> { <span class="component">HoArrowRight</span>,
+        <span class="component">HoCheck</span>, <span class="component">HoLoader</span> }
+        <span class="keyword">from</span> <span class="string">'hovue'</span><br />
+        <span class="keyword">&lt;/script&gt;</span><br /><br />
+        <span class="keyword">&lt;template&gt;</span><br />
+        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoArrowRight</span>
+        <span class="prop">:size</span>=<span class="string">"24"</span>
+        <span class="prop">animation</span>=<span class="string">"slide"</span>
+        <span class="keyword">/&gt;</span><br />
+        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoCheck</span>
+        <span class="prop">:size</span>=<span class="string">"24"</span>
+        <span class="prop">animation</span>=<span class="string">"bounce"</span>
+        <span class="keyword">/&gt;</span><br />
+        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoLoader</span>
+        <span class="prop">:size</span>=<span class="string">"24"</span>
+        <span class="prop">animation</span>=<span class="string">"spin"</span>
+        <span class="keyword">/&gt;</span><br />
         <span class="keyword">&lt;/template&gt;</span>
       </div>
       <div v-else>
-        <span class="comment">// nuxt.config.ts</span><br>
-        <span class="keyword">export default</span> defineNuxtConfig({<br>
-        &nbsp;&nbsp;<span class="prop">modules</span>: [<span class="string">'hovue/nuxt'</span>]<br>
+        <span class="comment">// nuxt.config.ts</span><br />
+        <span class="keyword">export default</span> defineNuxtConfig({<br />
+        &nbsp;&nbsp;<span class="prop">modules</span>: [<span class="string">'hovue/nuxt'</span
+        >]<br />
         })
       </div>
     </div>
@@ -62,7 +69,7 @@ const activeTab = ref<'vue' | 'nuxt'>('vue');
   justify-content: space-between;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--border);
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .code-dots {
@@ -76,9 +83,15 @@ const activeTab = ref<'vue' | 'nuxt'>('vue');
   border-radius: 50%;
 }
 
-.code-dot:nth-child(1) { background: #FF5F56; }
-.code-dot:nth-child(2) { background: #FFBD2E; }
-.code-dot:nth-child(3) { background: #27CA40; }
+.code-dot:nth-child(1) {
+  background: #ff5f56;
+}
+.code-dot:nth-child(2) {
+  background: #ffbd2e;
+}
+.code-dot:nth-child(3) {
+  background: #27ca40;
+}
 
 .code-tabs {
   display: flex;
@@ -117,11 +130,22 @@ const activeTab = ref<'vue' | 'nuxt'>('vue');
   direction: ltr;
 }
 
-.code-content :deep(.comment) { color: var(--text-muted); }
-.code-content :deep(.keyword) { color: var(--purple); }
-.code-content :deep(.string) { color: var(--primary); }
-.code-content :deep(.component) { color: var(--orange); }
-.code-content :deep(.prop) { color: var(--pink); }
-.code-content :deep(.value) { color: var(--primary); }
+.code-content :deep(.comment) {
+  color: var(--text-muted);
+}
+.code-content :deep(.keyword) {
+  color: var(--purple);
+}
+.code-content :deep(.string) {
+  color: var(--primary);
+}
+.code-content :deep(.component) {
+  color: var(--orange);
+}
+.code-content :deep(.prop) {
+  color: var(--pink);
+}
+.code-content :deep(.value) {
+  color: var(--primary);
+}
 </style>
-

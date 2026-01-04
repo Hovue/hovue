@@ -19,25 +19,43 @@ const siteUrl = Astro.site || 'https://hovue.dev';
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
+    <!-- Prevent white flash in dark mode -->
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (theme === 'dark' || (!theme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.backgroundColor = '#1a202c';
+        } else {
+          document.documentElement.style.backgroundColor = '#ffffff';
+        }
+      })();
+    </script>
+    <meta name="theme-color" content="#ffffff" id="theme-color" />
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="vue, vue3, nuxt, icons, animated icons, vue icons, nuxt icons, shadcn-vue, typescript, vue components" />
+    <meta
+      name="keywords"
+      content="vue, vue3, nuxt, icons, animated icons, vue icons, nuxt icons, shadcn-vue, typescript, vue components"
+    />
     <meta name="author" content="Hovue" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={currentUrl} />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={currentUrl} />
@@ -45,21 +63,23 @@ const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />
     <meta property="og:site_name" content="Hovue" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={currentUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, siteUrl).toString()} />
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <slot />
   </body>
 </html>
-
