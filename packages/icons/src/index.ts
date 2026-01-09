@@ -1,0 +1,41 @@
+// Export all icons
+export { default as HoArrowRight } from './icons/HoArrowRight.vue';
+export { default as HoArrowLeft } from './icons/HoArrowLeft.vue';
+export { default as HoArrowUp } from './icons/HoArrowUp.vue';
+export { default as HoArrowDown } from './icons/HoArrowDown.vue';
+export { default as HoChevronRight } from './icons/HoChevronRight.vue';
+export { default as HoChevronDown } from './icons/HoChevronDown.vue';
+export { default as HoCheck } from './icons/HoCheck.vue';
+export { default as HoX } from './icons/HoX.vue';
+export { default as HoPlus } from './icons/HoPlus.vue';
+export { default as HoMinus } from './icons/HoMinus.vue';
+export { default as HoSearch } from './icons/HoSearch.vue';
+export { default as HoMenu } from './icons/HoMenu.vue';
+export { default as HoHome } from './icons/HoHome.vue';
+export { default as HoUser } from './icons/HoUser.vue';
+export { default as HoSettings } from './icons/HoSettings.vue';
+export { default as HoBell } from './icons/HoBell.vue';
+export { default as HoMail } from './icons/HoMail.vue';
+export { default as HoHeart } from './icons/HoHeart.vue';
+export { default as HoPlay } from './icons/HoPlay.vue';
+export { default as HoPause } from './icons/HoPause.vue';
+export { default as HoVolume } from './icons/HoVolume.vue';
+export { default as HoCamera } from './icons/HoCamera.vue';
+export { default as HoImage } from './icons/HoImage.vue';
+export { default as HoMusic } from './icons/HoMusic.vue';
+export { default as HoFile } from './icons/HoFile.vue';
+export { default as HoFolder } from './icons/HoFolder.vue';
+export { default as HoCopy } from './icons/HoCopy.vue';
+export { default as HoTrash } from './icons/HoTrash.vue';
+export { default as HoDownload } from './icons/HoDownload.vue';
+export { default as HoUpload } from './icons/HoUpload.vue';
+export { default as HoLoader } from './icons/HoLoader.vue';
+export { default as HoRefresh } from './icons/HoRefresh.vue';
+export { default as HoSync } from './icons/HoSync.vue';
+export { default as HoClock } from './icons/HoClock.vue';
+export { default as HoCalendar } from './icons/HoCalendar.vue';
+export { default as HoStar } from './icons/HoStar.vue';
+
+// Export types
+export type { IconProps } from './icons/types';
+

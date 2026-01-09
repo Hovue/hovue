@@ -1,0 +1,68 @@
+{
+  "name": "@hovue/icons",
+  "version": "0.0.1",
+  "description": "Animated Vue icons with motion baked in",
+  "type": "module",
+  "main": "./dist/hovue.cjs",
+  "module": "./dist/hovue.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/hovue.esm.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/hovue.cjs"
+      },
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "vue",
+    "vue3",
+    "icons",
+    "animated-icons",
+    "vue-icons",
+    "nuxt",
+    "components"
+  ],
+  "author": "Hovue Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hovue/hovue.git",
+    "directory": "packages/icons"
+  },
+  "homepage": "https://hovue.dev",
+  "bugs": {
+    "url": "https://github.com/hovue/hovue/issues"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'No linting configured'",
+    "clean": "rm -rf dist node_modules"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vite-plugin-dts": "^3.9.1",
+    "vue": "^3.5.26"
+  }
+}
+

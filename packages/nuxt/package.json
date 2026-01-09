@@ -1,0 +1,56 @@
+{
+  "name": "@hovue/nuxt",
+  "version": "0.0.1",
+  "description": "Nuxt module for @hovue/icons with auto-import",
+  "type": "module",
+  "main": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "types": "./dist/types.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "hovue",
+    "icons",
+    "vue-icons"
+  ],
+  "author": "Hovue Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hovue/hovue.git",
+    "directory": "packages/nuxt"
+  },
+  "homepage": "https://hovue.dev",
+  "bugs": {
+    "url": "https://github.com/hovue/hovue/issues"
+  },
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "dev": "nuxt-module-build build --stub",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'No linting configured'",
+    "clean": "rm -rf dist node_modules"
+  },
+  "dependencies": {
+    "@hovue/icons": "workspace:*",
+    "@nuxt/kit": "^3.11.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^0.6.0",
+    "nuxt": "^3.11.0",
+    "typescript": "^5.4.0"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.11.0"
+  }
+}
+

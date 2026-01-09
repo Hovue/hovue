@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs (keep dist/)
+dist/
+
+# Development files
+.vscode/
+.idea/
+*.log
+.DS_Store
+
+# Source files (only include built files)
+src/
+*.ts
+*.vue
+!*.d.ts
+
+# Config files
+tsconfig.json
+vite.config.ts
+.eslintrc*
+.prettierrc*
+
+# Git
+.git/
+.gitignore
+
+# Testing
+coverage/
+*.test.ts
+*.spec.ts
+
+# Documentation (keep README.md)
+docs/
+*.md
+!README.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Environment
+.env
+.env.local
+

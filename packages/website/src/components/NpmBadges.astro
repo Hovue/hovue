@@ -1,0 +1,84 @@
+---
+// NPM Badges Component
+---
+
+<div class="npm-badges">
+  <a
+    href="https://www.npmjs.com/package/hovue"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="npm-badge"
+    title="View on npm"
+  >
+    <img
+      src="https://img.shields.io/npm/v/hovue?style=flat-square&logo=npm&color=CB3837"
+      alt="npm version"
+      loading="lazy"
+    />
+  </a>
+  <a
+    href="https://www.npmjs.com/package/hovue"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="npm-badge"
+    title="View downloads"
+  >
+    <img
+      src="https://img.shields.io/npm/dm/hovue?style=flat-square&logo=npm&color=CB3837"
+      alt="npm downloads"
+      loading="lazy"
+    />
+  </a>
+  <a
+    href="https://www.npmjs.com/package/hovue"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="npm-badge"
+    title="View package size"
+  >
+    <img
+      src="https://img.shields.io/bundlephobia/minzip/hovue?style=flat-square&logo=npm&color=CB3837"
+      alt="npm bundle size"
+      loading="lazy"
+    />
+  </a>
+  <a
+    href="https://www.npmjs.com/package/hovue"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="npm-badge"
+    title="View license"
+  >
+    <img
+      src="https://img.shields.io/npm/l/hovue?style=flat-square&logo=npm&color=CB3837"
+      alt="npm license"
+      loading="lazy"
+    />
+  </a>
+</div>
+
+<style>
+  .npm-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .npm-badge {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+  }
+
+  .npm-badge:hover {
+    transform: translateY(-2px);
+  }
+
+  .npm-badge img {
+    display: block;
+    height: 20px;
+    border-radius: 4px;
+  }
+</style>

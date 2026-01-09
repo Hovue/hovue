@@ -1,13 +1,13 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "buildCommand": "chmod +x build-for-vercel.sh && ./build-for-vercel.sh",
+  "outputDirectory": "packages/website/dist",
+  "devCommand": "cd packages/website && pnpm dev",
+  "installCommand": "pnpm install",
   "framework": "astro",
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/playground/:path*",
+      "destination": "/playground/index.html"
     }
   ],
   "headers": [
@@ -39,4 +39,3 @@
     }
   ]
 }
-

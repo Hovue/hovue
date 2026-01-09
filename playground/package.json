@@ -1,0 +1,25 @@
+{
+  "name": "hovue-playground",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt generate",
+    "build:real": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@hovue/icons": "workspace:*",
+    "@hovue/nuxt": "workspace:*",
+    "nuxt": "^3.11.0",
+    "vue": "^3.5.26"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "typescript": "^5.4.0"
+  }
+}
+

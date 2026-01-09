@@ -1,0 +1,128 @@
+---
+import CodePreview from './CodePreview.vue';
+---
+
+<section class="hero">
+  <div class="badge">
+    <span class="badge-dot"></span>
+    We're Proudly Open Source
+  </div>
+
+  <h1>
+    Icons that <span class="accent-text">move</span><br />
+    with <span class="accent-text">intent</span>
+  </h1>
+
+  <p class="hero-subtitle">
+    Editable Vue components with motion baked in. Works seamlessly with Nuxt, shadcn-vue, and modern
+    design systems.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#icons" class="btn btn-primary btn-large">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      Browse Icons
+    </a>
+    <a href="https://github.com/hovue/hovue" class="btn btn-ghost btn-large">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        ></polygon>
+      </svg>
+      Star on GitHub
+    </a>
+  </div>
+
+  <div class="code-preview">
+    <CodePreview client:load />
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: calc(80px + var(--spacing-3xl)) var(--spacing-xl) var(--spacing-3xl);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 500;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+  }
+
+  .hero h1 .accent-text {
+    color: var(--primary);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-2xl);
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .code-preview {
+    width: 100%;
+    max-width: 800px;
+    margin-top: var(--spacing-2xl);
+    text-align: left;
+  }
+</style>

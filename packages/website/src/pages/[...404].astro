@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+export async function getStaticPaths() {
+  return [{ params: { '404': undefined } }];
+}
+---
+
+<BaseLayout
+  title="Coming Soon - Hovue"
+  description="This page is under construction. We're working hard to bring you amazing content!"
+>
+  <Navigation />
+
+  <main class="not-found">
+    <div class="container">
+      <div class="content">
+        <div class="illustration">
+          <svg
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="100"
+              cy="100"
+              r="80"
+              stroke="var(--border)"
+              stroke-width="2"
+              fill="var(--bg-card)"></circle>
+            <path
+              d="M70 100L90 120L130 80"
+              stroke="var(--primary)"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <circle
+              cx="100"
+              cy="100"
+              r="60"
+              stroke="var(--primary)"
+              stroke-width="2"
+              stroke-dasharray="4 4"
+              opacity="0.3"></circle>
+          </svg>
+        </div>
+
+        <h1>Coming Soon</h1>
+        <p class="subtitle">
+          This page is under construction. We're working hard to bring you amazing content!
+        </p>
+
+        <div class="actions">
+          <a href="/" class="btn btn-primary">Go Home</a>
+          <a href="/docs" class="btn btn-ghost">View Docs</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+  }
+
+  .not-found .container {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  .illustration {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .not-found h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .not-found h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

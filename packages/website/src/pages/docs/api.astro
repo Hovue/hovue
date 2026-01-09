@@ -1,0 +1,189 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout
+  title="API Reference - Hovue"
+  description="Complete API reference for Hovue icons. Learn about all available props and options."
+  prev={{ url: '/docs/quick-start', title: 'Quick Start' }}
+  next={{ url: '/docs/animations', title: 'Animation Guide' }}
+>
+  <h1>API Reference</h1>
+
+  <p>
+    This page documents all props and options available for Hovue icons. All icons share the same
+    API for consistency.
+  </p>
+
+  <h2>Props</h2>
+
+  <h3>size</h3>
+  <p><strong>Type:</strong> <code>number | string</code></p>
+  <p><strong>Default:</strong> <code>24</code></p>
+  <p><strong>Description:</strong> The size of the icon in pixels.</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:size</span>=<span style="color: var(--cyan);">"24"</span> /&gt;
+  </div>
+
+  <h3>color</h3>
+  <p><strong>Type:</strong> <code>string</code></p>
+  <p><strong>Default:</strong> <code>"currentColor"</code></p>
+  <p><strong>Description:</strong> The color of the icon. Accepts any valid CSS color value.</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);">"#319795"</span
+    > /&gt;<br />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);"
+      >"rgb(49, 151, 149)"</span
+    > /&gt;<br />
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">color</span>=<span style="color: var(--cyan);"
+      >"currentColor"</span
+    > /&gt;
+  </div>
+
+  <h3>animation</h3>
+  <p>
+    <strong>Type:</strong>
+    <code>"slide" | "bounce" | "rotate" | "pulse" | "fade" | "none"</code>
+  </p>
+  <p><strong>Default:</strong> <code>"none"</code></p>
+  <p><strong>Description:</strong> The animation type to apply to the icon.</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">animation</span>=<span style="color: var(--cyan);"
+      >"slide"</span
+    > /&gt;
+  </div>
+
+  <h3>animationDuration</h3>
+  <p><strong>Type:</strong> <code>number</code></p>
+  <p><strong>Default:</strong> <code>300</code></p>
+  <p><strong>Description:</strong> The duration of the animation in milliseconds.</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:animation-duration</span>=<span style="color: var(--cyan);"
+      >"500"</span
+    > /&gt;
+  </div>
+
+  <h3>strokeWidth</h3>
+  <p><strong>Type:</strong> <code>number</code></p>
+  <p><strong>Default:</strong> <code>2</code></p>
+  <p><strong>Description:</strong> The stroke width of the icon.</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">:stroke-width</span>=<span style="color: var(--cyan);"
+      >"1.5"</span
+    > /&gt;
+  </div>
+
+  <h2>Events</h2>
+
+  <h3>@click</h3>
+  <p><strong>Type:</strong> <code>MouseEvent</code></p>
+  <p><strong>Description:</strong> Emitted when the icon is clicked.</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">@click</span>=<span style="color: var(--cyan);"
+      >"handleClick"</span
+    > /&gt;
+  </div>
+
+  <h3>@hover</h3>
+  <p><strong>Type:</strong> <code>MouseEvent</code></p>
+  <p><strong>Description:</strong> Emitted when the mouse enters the icon.</p>
+
+  <div class="docs-code">
+    &lt;<span style="color: var(--orange);">HoArrowRight</span>
+    <span style="color: var(--pink);">@hover</span>=<span style="color: var(--cyan);"
+      >"handleHover"</span
+    > /&gt;
+  </div>
+
+  <h2>TypeScript</h2>
+
+  <p>All icons are fully typed. Import the types you need:</p>
+
+  <div class="docs-code">
+    <span style="color: var(--purple);">import</span>
+    <span style="color: var(--purple);">type</span> &#123; <span style="color: var(--orange);"
+      >IconProps</span
+    > &#125; <span style="color: var(--purple);">from</span>
+    <span style="color: var(--cyan);">'hovue'</span>
+  </div>
+
+  <h2>Available Icons</h2>
+
+  <p>Hovue includes 100+ icons. Here are the main categories:</p>
+
+  <h3>Arrows</h3>
+  <ul>
+    <li><code>HoArrowRight</code></li>
+    <li><code>HoArrowLeft</code></li>
+    <li><code>HoArrowUp</code></li>
+    <li><code>HoArrowDown</code></li>
+    <li><code>HoChevronRight</code></li>
+    <li><code>HoChevronDown</code></li>
+  </ul>
+
+  <h3>Actions</h3>
+  <ul>
+    <li><code>HoCheck</code></li>
+    <li><code>HoX</code></li>
+    <li><code>HoPlus</code></li>
+    <li><code>HoMinus</code></li>
+    <li><code>HoSearch</code></li>
+    <li><code>HoMenu</code></li>
+  </ul>
+
+  <h3>UI Elements</h3>
+  <ul>
+    <li><code>HoHome</code></li>
+    <li><code>HoUser</code></li>
+    <li><code>HoSettings</code></li>
+    <li><code>HoBell</code></li>
+    <li><code>HoMail</code></li>
+    <li><code>HoHeart</code></li>
+  </ul>
+
+  <h3>Media</h3>
+  <ul>
+    <li><code>HoPlay</code></li>
+    <li><code>HoPause</code></li>
+    <li><code>HoVolume</code></li>
+    <li><code>HoCamera</code></li>
+    <li><code>HoImage</code></li>
+    <li><code>HoMusic</code></li>
+  </ul>
+
+  <h3>Files</h3>
+  <ul>
+    <li><code>HoFile</code></li>
+    <li><code>HoFolder</code></li>
+    <li><code>HoCopy</code></li>
+    <li><code>HoTrash</code></li>
+    <li><code>HoDownload</code></li>
+    <li><code>HoUpload</code></li>
+  </ul>
+
+  <h3>Loaders</h3>
+  <ul>
+    <li><code>HoLoader</code></li>
+    <li><code>HoRefresh</code></li>
+    <li><code>HoSync</code></li>
+    <li><code>HoClock</code></li>
+    <li><code>HoCalendar</code></li>
+    <li><code>HoStar</code></li>
+  </ul>
+
+  <p>See the <a href="/docs/examples">Examples Gallery</a> for code examples of all icons.</p>
+</DocsLayout>
