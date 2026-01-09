@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/vue": "^4.0.0",
     "@hovue/icons": "workspace:*",
-    "astro": "^4.0.0",
+    "astro": "^5.16.8",
     "vue": "^3.4.0"
   },
   "devDependencies": {
