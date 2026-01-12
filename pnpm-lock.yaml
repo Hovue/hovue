@@ -49,29 +49,11 @@ importers:
         specifier: ^5.4.0
         version: 5.9.3
 
-  packages/hovue:
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^5.2.4
-        version: 5.2.4(vite@5.4.21)(vue@3.5.26)
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-      vite:
-        specifier: ^5.4.21
-        version: 5.4.21(@types/node@20.19.27)
-      vite-plugin-dts:
-        specifier: ^3.9.1
-        version: 3.9.1(typescript@5.9.3)(vite@5.4.21)
-      vue:
-        specifier: ^3.5.26
-        version: 3.5.26(typescript@5.9.3)
-
   packages/icons:
     devDependencies:
       '@vitejs/plugin-vue':
-        specifier: ^5.2.4
-        version: 5.2.4(vite@5.4.21)(vue@3.5.26)
+        specifier: ^6.0.3
+        version: 6.0.3(vite@5.4.21)(vue@3.5.26)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -3627,6 +3609,19 @@ packages:
     dependencies:
       vite: 5.4.21(@types/node@20.19.27)
       vue: 3.5.26(typescript@5.9.3)
+    dev: false
+
+  /@vitejs/plugin-vue@6.0.3(vite@5.4.21)(vue@3.5.26):
+    resolution: {integrity: sha512-TlGPkLFLVOY3T7fZrwdvKpjprR3s4fxRln0ORDo1VQ7HHyxJwTlrjKU3kpVWTlaAjIEuCTokmjkZnr8Tpc925w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+      vue: ^3.2.25
+    dependencies:
+      '@rolldown/pluginutils': 1.0.0-beta.53
+      vite: 5.4.21(@types/node@20.19.27)
+      vue: 3.5.26(typescript@5.9.3)
+    dev: true
 
   /@vitejs/plugin-vue@6.0.3(vite@7.3.1)(vue@3.5.26):
     resolution: {integrity: sha512-TlGPkLFLVOY3T7fZrwdvKpjprR3s4fxRln0ORDo1VQ7HHyxJwTlrjKU3kpVWTlaAjIEuCTokmjkZnr8Tpc925w==}
