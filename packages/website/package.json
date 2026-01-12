@@ -17,7 +17,7 @@
     "clean": "rm -rf dist .astro node_modules"
   },
   "dependencies": {
-    "@astrojs/vue": "^4.0.0",
+    "@astrojs/vue": "^5.1.4",
     "@hovue/icons": "workspace:*",
     "astro": "^4.0.0",
     "vue": "^3.4.0"
