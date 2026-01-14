@@ -26,6 +26,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "build:vercel": "bash build-for-vercel.sh",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "format": "turbo format",

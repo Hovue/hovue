@@ -6,9 +6,7 @@ set -e
 
 echo "🔨 Building for Vercel deployment..."
 
-# Install dependencies
-echo "📦 Installing dependencies..."
-pnpm install
+# Note: Dependencies are already installed by Vercel
 
 # Build playground first (generate static files)
 echo "🎮 Building playground..."
