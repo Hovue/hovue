@@ -22,6 +22,42 @@ const {
 <BaseLayout title={title} description={description}>
   <Navigation />
 
+  <!-- Mobile Docs Menu Button -->
+  <button class="docs-mobile-menu-btn" id="docs-mobile-menu-btn" aria-label="Open documentation menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+    <span>Menu</span>
+  </button>
+
+  <!-- Mobile Docs Sidebar Overlay -->
+  <div class="docs-mobile-overlay" id="docs-mobile-overlay">
+    <div class="docs-mobile-sidebar">
+      <div class="docs-mobile-header">
+        <span class="docs-mobile-title">Documentation</span>
+        <button class="docs-mobile-close" id="docs-mobile-close" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="docs-mobile-nav">
+        <h4>Getting Started</h4>
+        <ul>
+          <li><a href="/docs" class={Astro.url.pathname === '/docs' ? 'active' : ''}>Introduction</a></li>
+          <li><a href="/docs/installation" class={Astro.url.pathname === '/docs/installation' ? 'active' : ''}>Installation</a></li>
+          <li><a href="/docs/quick-start" class={Astro.url.pathname === '/docs/quick-start' ? 'active' : ''}>Quick Start</a></li>
+          <li><a href="/docs/api" class={Astro.url.pathname === '/docs/api' ? 'active' : ''}>API Reference</a></li>
+        </ul>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="/docs/animations" class={Astro.url.pathname === '/docs/animations' ? 'active' : ''}>Animation Guide</a></li>
+          <li><a href="/docs/examples" class={Astro.url.pathname === '/docs/examples' ? 'active' : ''}>Examples Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
   <div style="padding-top: 80px; min-height: 100vh;">
     <div class="docs-container">
       <aside class="docs-sidebar-wrapper">
@@ -348,16 +384,170 @@ const {
     background: rgba(237, 137, 54, 0.15);
   }
 
+  /* Mobile Docs Menu Button */
+  .docs-mobile-menu-btn {
+    display: none;
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    z-index: 90;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    align-items: center;
+    gap: var(--spacing-sm);
+    box-shadow: 0 4px 12px rgba(49, 151, 149, 0.4);
+    transition: all 0.2s ease;
+  }
+
+  .docs-mobile-menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(49, 151, 149, 0.5);
+  }
+
+  /* Mobile Docs Overlay */
+  .docs-mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .docs-mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .docs-mobile-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    max-width: 85vw;
+    height: 100%;
+    background: var(--bg-dark);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .docs-mobile-overlay.active .docs-mobile-sidebar {
+    transform: translateX(0);
+  }
+
+  .docs-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .docs-mobile-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+  }
+
+  .docs-mobile-close {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .docs-mobile-close:hover {
+    border-color: var(--primary);
+    color: var(--text-primary);
+  }
+
+  .docs-mobile-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+  }
+
+  .docs-mobile-nav h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .docs-mobile-nav h4:first-child {
+    margin-top: 0;
+  }
+
+  .docs-mobile-nav ul {
+    list-style: none;
+  }
+
+  .docs-mobile-nav li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .docs-mobile-nav a {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+  }
+
+  .docs-mobile-nav a:hover,
+  .docs-mobile-nav a.active {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  .docs-mobile-nav a.active {
+    border-left: 2px solid var(--primary);
+    padding-left: calc(var(--spacing-md) - 2px);
+    color: var(--primary);
+    font-weight: 500;
+  }
+
   @media (max-width: 1024px) {
     .docs-container {
       grid-template-columns: 1fr;
       padding: var(--spacing-md);
     }
 
-    .docs-sidebar {
-      position: relative;
-      top: 0;
-      margin-bottom: var(--spacing-lg);
+    .docs-sidebar-wrapper {
+      display: none;
+    }
+
+    .docs-mobile-menu-btn {
+      display: flex;
+    }
+
+    .docs-mobile-overlay {
+      display: block;
     }
 
     .docs-content {
@@ -413,4 +603,43 @@ const {
       // The key is ensuring no flash by having consistent styling
     });
   })();
+
+  // Mobile docs sidebar
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('docs-mobile-menu-btn');
+    const closeBtn = document.getElementById('docs-mobile-close');
+    const overlay = document.getElementById('docs-mobile-overlay');
+
+    function openDocsSidebar() {
+      overlay?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDocsSidebar() {
+      overlay?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn?.addEventListener('click', openDocsSidebar);
+    closeBtn?.addEventListener('click', closeDocsSidebar);
+
+    // Close on overlay click (outside sidebar)
+    overlay?.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeDocsSidebar();
+      }
+    });
+
+    // Close on link click
+    overlay?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeDocsSidebar);
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay?.classList.contains('active')) {
+        closeDocsSidebar();
+      }
+    });
+  });
 </script>
