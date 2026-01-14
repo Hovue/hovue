@@ -6,7 +6,11 @@
   "framework": "astro",
   "rewrites": [
     {
-      "source": "/playground/:path*",
+      "source": "/playground",
+      "destination": "/playground/index.html"
+    },
+    {
+      "source": "/playground/",
       "destination": "/playground/index.html"
     }
   ],
