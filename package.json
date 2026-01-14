@@ -26,7 +26,9 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "build:vercel": "bash build-for-vercel.sh",
+    "build:vercel": "(pnpm --filter hovue-playground generate || echo 'Playground build skipped') && mkdir -p packages/website/public/playground && (test -d playground/.output/public && cp -r playground/.output/public/* packages/website/public/playground/ || echo 'No playground to copy') && pnpm --filter @hovue/website build",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "format": "turbo format",
