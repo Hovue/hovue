@@ -5,9 +5,9 @@
   "description": "Animated Vue Icons with Motion Baked In - Monorepo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hovue/hovue.git"
+    "url": "git+https://github.com/hovue/hovue.git"
   },
-  "homepage": "https://hovue.dev",
+  "homepage": "https://hovue.xyz",
   "bugs": {
     "url": "https://github.com/hovue/hovue/issues"
   },
@@ -47,4 +47,3 @@
   },
   "packageManager": "pnpm@8.15.0"
 }
-

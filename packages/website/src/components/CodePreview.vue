@@ -21,7 +21,7 @@
         ><span class="keyword">&gt;</span><br />
         <span class="keyword">import</span> { <span class="component">HoArrowRight</span>,
         <span class="component">HoCheck</span>, <span class="component">HoLoader</span> }
-        <span class="keyword">from</span> <span class="string">'hovue'</span><br />
+        <span class="keyword">from</span> <span class="string">'@hovue/icons'</span><br />
         <span class="keyword">&lt;/script&gt;</span><br /><br />
         <span class="keyword">&lt;template&gt;</span><br />
         &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoArrowRight</span>
@@ -41,7 +41,7 @@
       <div v-else>
         <span class="comment">// nuxt.config.ts</span><br />
         <span class="keyword">export default</span> defineNuxtConfig({<br />
-        &nbsp;&nbsp;<span class="prop">modules</span>: [<span class="string">'hovue/nuxt'</span
+        &nbsp;&nbsp;        <span class="prop">modules</span>: [<span class="string">'@hovue/nuxt'</span
         >]<br />
         })
       </div>

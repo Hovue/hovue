@@ -1,6 +1,6 @@
 {
   "name": "@hovue/icons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Animated Vue icons with motion baked in",
   "type": "module",
   "main": "./dist/hovue.cjs",
@@ -43,7 +43,7 @@
     "url": "https://github.com/hovue/hovue.git",
     "directory": "packages/icons"
   },
-  "homepage": "https://hovue.dev",
+  "homepage": "https://hovue.xyz",
   "bugs": {
     "url": "https://github.com/hovue/hovue/issues"
   },
@@ -65,4 +65,3 @@
     "vue": "^3.5.26"
   }
 }
-

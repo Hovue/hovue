@@ -6,7 +6,8 @@
   "description": "Official website for Hovue",
   "scripts": {
     "dev": "astro dev",
-    "dev:with-playground": "cd ../.. && pnpm --filter playground build && mkdir -p packages/website/public/playground && cp -r playground/.output/public/* packages/website/public/playground/ && cd packages/website && astro dev",
+    "dev:with-playground": "cd ../.. && pnpm --filter hovue-playground generate && mkdir -p packages/website/public/playground && cp -r playground/.output/public/* packages/website/public/playground/ && cd packages/website && astro dev",
+    "predev": "test -d public/playground || (echo '⚠️  Playground not found. Run: pnpm dev:with-playground' || true)",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -29,4 +30,3 @@
     "typescript": "^5.3.0"
   }
 }
-

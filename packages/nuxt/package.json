@@ -1,6 +1,6 @@
 {
   "name": "@hovue/nuxt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Nuxt module for @hovue/icons with auto-import",
   "type": "module",
   "main": "./dist/module.mjs",
@@ -29,7 +29,7 @@
     "url": "https://github.com/hovue/hovue.git",
     "directory": "packages/nuxt"
   },
-  "homepage": "https://hovue.dev",
+  "homepage": "https://hovue.xyz",
   "bugs": {
     "url": "https://github.com/hovue/hovue/issues"
   },
@@ -53,4 +53,3 @@
     "nuxt": "^3.11.0"
   }
 }
-

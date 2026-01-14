@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-const siteUrl = 'https://hovue.dev';
+const siteUrl = 'https://hovue.xyz';
 
 const staticPages = [
   '',

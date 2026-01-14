@@ -19,7 +19,7 @@ const {
   publishDate = new Date().toISOString(),
 } = Astro.props;
 
-const siteUrl = Astro.site || 'https://hovue.dev';
+const siteUrl = Astro.site || 'https://hovue.xyz';
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const ogImageUrl = new URL(ogImage, siteUrl).toString();
 ---

@@ -7,7 +7,7 @@
 
 A collection of beautiful, animated Vue 3 icons with CSS-based animations. Perfect for modern Vue and Nuxt applications.
 
-## 📦 Packages
+## Packages
 
 This is a monorepo containing:
 
@@ -16,7 +16,7 @@ This is a monorepo containing:
 - **[@hovue/cli](./packages/cli)** - CLI tool for managing icons
 - **[@hovue/website](./packages/website)** - Official documentation website
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -62,21 +62,21 @@ Then use icons directly (auto-imported):
 </template>
 ```
 
-## 🎨 Features
+## Features
 
-- ✨ **36+ Beautiful Icons** - Carefully crafted SVG icons
-- 🎭 **CSS Animations** - Smooth, performant animations on hover
-- 🎯 **TypeScript** - Full type safety
-- 📦 **Tree-shakeable** - Import only what you need
-- 🚀 **Zero Dependencies** - No external animation libraries
-- 🎨 **Customizable** - Size, color, and animation props
-- ⚡ **Nuxt Ready** - Auto-import support
+- **36+ Beautiful Icons** - Carefully crafted SVG icons
+- **CSS Animations** - Smooth, performant animations on hover
+- **TypeScript** - Full type safety
+- **Tree-shakeable** - Import only what you need
+- **Zero Dependencies** - No external animation libraries
+- **Customizable** - Size, color, and animation props
+- **Nuxt Ready** - Auto-import support
 
-## 📚 Documentation
+## Documentation
 
-Visit [https://hovue.dev](https://hovue.dev) for complete documentation.
+Visit [https://hovue.xyz](https://hovue.xyz) for complete documentation.
 
-## 🛠️ Development
+## Development
 
 This is a monorepo managed by [pnpm](https://pnpm.io) and [Turbo](https://turbo.build).
 
@@ -95,10 +95,10 @@ cd playground
 pnpm dev
 ```
 
-## 📝 License
+## License
 
 MIT © [Hovue Contributors](./LICENSE)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Inspired by [Heroicons](https://heroicons.com) and [Lucide](https://lucide.dev).

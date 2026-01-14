@@ -1,5 +1,6 @@
 ---
 import CodePreview from './CodePreview.vue';
+import NpmBadges from './NpmBadges.astro';
 ---
 
 <section class="hero">
@@ -50,6 +51,10 @@ import CodePreview from './CodePreview.vue';
       </svg>
       Star on GitHub
     </a>
+  </div>
+
+  <div class="npm-badges-wrapper">
+    <NpmBadges />
   </div>
 
   <div class="code-preview">
@@ -117,6 +122,10 @@ import CodePreview from './CodePreview.vue';
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: var(--spacing-3xl);
+  }
+
+  .npm-badges-wrapper {
+    margin: var(--spacing-2xl) 0;
   }
 
   .code-preview {
