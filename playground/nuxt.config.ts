@@ -1,7 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: false, // Disable SSR for static generation (SPA mode)
+  ssr: false,
   nitro: {
     prerender: {
       routes: ['/']

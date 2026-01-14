@@ -17,7 +17,6 @@ program
   .description('CLI tool for Hovue icons')
   .version('0.0.1')
 
-// List all available icons
 program
   .command('list')
   .description('List all available icons')
@@ -46,7 +45,6 @@ program
     console.log('\n')
   })
 
-// Initialize Hovue config
 program
   .command('init')
   .description('Initialize Hovue configuration')
@@ -71,7 +69,6 @@ program
     console.log(chalk.gray(`   Location: ${configPath}`))
   })
 
-// Add icon(s) to project
 program
   .command('add <icons...>')
   .description('Add icon(s) to your project')
@@ -84,8 +81,6 @@ program
     const outputDir = join(targetDir, options.output)
     await ensureDir(outputDir)
 
-    // In a real implementation, this would copy icon files from @hovue/icons
-    // For now, we'll create a placeholder
     icons.forEach((icon: string) => {
       const iconName = icon.startsWith('Ho') ? icon : `Ho${icon}`
       const filePath = join(outputDir, `${iconName}.vue`)

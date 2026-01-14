@@ -147,7 +147,6 @@ defineProps<Props>();
 }
 
 .docs-nav-spacer {
-  /* Empty spacer to maintain grid */
 }
 
 @media (max-width: 640px) {

@@ -1,5 +1,4 @@
 ---
-// Component props and logic can go here
 ---
 
 <section id="docs" class="section">
@@ -47,7 +46,7 @@
         >, <span style="color: var(--orange);">HoCheck</span> &#125; <span
           style="color: var(--purple);">from</span
         >
-        <span style="color: var(--cyan);">'hovue'</span><br /><br />
+        <span style="color: var(--cyan);">'@hovue/icons'</span><br /><br />
         <span style="color: var(--text-muted);">// Use in your template</span><br />
         &lt;<span style="color: var(--orange);">HoArrowRight</span>
         <br />
@@ -73,7 +72,7 @@
         <span style="color: var(--text-muted);">// nuxt.config.ts</span><br />
         <span style="color: var(--purple);">export default</span> defineNuxtConfig(&#123;<br />
         &nbsp;&nbsp;<span style="color: var(--pink);">modules</span>: [<span
-          style="color: var(--cyan);">'hovue/nuxt'</span
+          style="color: var(--cyan);">'@hovue/nuxt'</span
         >]<br />
         &#125;)
       </div>
@@ -81,7 +80,7 @@
   </div>
 </section>
 
-<style>
+<style is:global>
   .section {
     padding: var(--spacing-3xl) var(--spacing-xl);
     max-width: 1280px;
@@ -203,10 +202,12 @@
   }
 
   .docs-code {
+    position: relative;
     background: var(--bg-dark);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
+    padding-top: calc(var(--spacing-lg) + 2.5rem); /* Extra padding for copy button */
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.875rem;
     line-height: 1.7;
@@ -223,4 +224,128 @@
       display: none;
     }
   }
+
+  .docs-preview .docs-code .copy-button {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    left: auto !important;
+    bottom: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.375rem !important;
+    padding: 0.375rem 0.75rem !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    font-family: inherit !important;
+    z-index: 10 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    line-height: 1 !important;
+  }
+
+  .docs-preview .docs-code .copy-button:hover {
+    background: var(--bg-dark) !important;
+    border-color: var(--primary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .docs-preview .docs-code .copy-button.copied {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+  }
+
+  .docs-preview .docs-code .copy-button svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+  }
+
+  .docs-preview .docs-code .copy-button span {
+    font-size: 0.75rem !important;
+    line-height: 1 !important;
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const codeBlocks = document.querySelectorAll('.docs-preview .docs-code:not(.has-copy-button)');
+
+    codeBlocks.forEach((block) => {
+      block.classList.add('has-copy-button');
+
+      const extractText = (element) => {
+        const clone = element.cloneNode(true);
+
+        clone.querySelectorAll('br').forEach(br => {
+          br.replaceWith('\n');
+        });
+
+        let text = clone.textContent || '';
+
+        const textarea = document.createElement('textarea');
+        textarea.innerHTML = text;
+        text = textarea.value;
+
+        return text
+          .replace(/\u00A0/g, ' ')
+          .replace(/[ \t]+/g, ' ')
+          .replace(/\n\s*\n\s*\n/g, '\n\n')
+          .trim();
+      };
+
+      const codeText = extractText(block);
+
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-button';
+      copyButton.setAttribute('aria-label', 'Copy code');
+      copyButton.setAttribute('title', 'Copy code');
+      copyButton.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span>Copy</span>
+      `;
+
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(codeText);
+          copyButton.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Copied</span>
+          `;
+          copyButton.classList.add('copied');
+          copyButton.setAttribute('aria-label', 'Copied!');
+          copyButton.setAttribute('title', 'Copied!');
+          setTimeout(() => {
+            copyButton.innerHTML = `
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy</span>
+            `;
+            copyButton.classList.remove('copied');
+            copyButton.setAttribute('aria-label', 'Copy code');
+            copyButton.setAttribute('title', 'Copy code');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy:', err);
+        }
+      });
+
+      block.appendChild(copyButton);
+    });
+  });
+</script>

@@ -14,45 +14,56 @@
           nuxt.config.ts
         </button>
       </div>
+      <CopyButton :code="currentCode" />
     </div>
     <div class="code-content">
-      <div v-if="activeTab === 'vue'">
-        <span class="keyword">&lt;script</span> <span class="prop">setup</span
-        ><span class="keyword">&gt;</span><br />
-        <span class="keyword">import</span> { <span class="component">HoArrowRight</span>,
-        <span class="component">HoCheck</span>, <span class="component">HoLoader</span> }
-        <span class="keyword">from</span> <span class="string">'@hovue/icons'</span><br />
-        <span class="keyword">&lt;/script&gt;</span><br /><br />
-        <span class="keyword">&lt;template&gt;</span><br />
-        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoArrowRight</span>
-        <span class="prop">:size</span>=<span class="string">"24"</span>
-        <span class="prop">animation</span>=<span class="string">"slide"</span>
-        <span class="keyword">/&gt;</span><br />
-        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoCheck</span>
-        <span class="prop">:size</span>=<span class="string">"24"</span>
-        <span class="prop">animation</span>=<span class="string">"bounce"</span>
-        <span class="keyword">/&gt;</span><br />
-        &nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoLoader</span>
-        <span class="prop">:size</span>=<span class="string">"24"</span>
-        <span class="prop">animation</span>=<span class="string">"spin"</span>
-        <span class="keyword">/&gt;</span><br />
-        <span class="keyword">&lt;/template&gt;</span>
-      </div>
-      <div v-else>
-        <span class="comment">// nuxt.config.ts</span><br />
-        <span class="keyword">export default</span> defineNuxtConfig({<br />
-        &nbsp;&nbsp;        <span class="prop">modules</span>: [<span class="string">'@hovue/nuxt'</span
-        >]<br />
-        })
-      </div>
+      <div v-if="activeTab === 'vue'" v-html="vueCodeHtml"></div>
+      <div v-else v-html="nuxtCodeHtml"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import CopyButton from './CopyButton.vue';
 
 const activeTab = ref<'vue' | 'nuxt'>('vue');
+
+const vueCodeHtml = computed(() => {
+  return `<span class="keyword">&lt;script setup&gt;</span><br>
+<span class="keyword">import</span> { <span class="component">HoArrowRight</span>, <span class="component">HoCheck</span>, <span class="component">HoLoader</span> } <span class="keyword">from</span> <span class="string">'@hovue/icons'</span><br>
+<span class="keyword">&lt;/script&gt;</span><br><br>
+<span class="keyword">&lt;template&gt;</span><br>
+&nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoArrowRight</span> <span class="prop">:size</span>=<span class="string">"24"</span> <span class="prop">animation</span>=<span class="string">"slide"</span> <span class="keyword">/&gt;</span><br>
+&nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoCheck</span> <span class="prop">:size</span>=<span class="string">"24"</span> <span class="prop">animation</span>=<span class="string">"bounce"</span> <span class="keyword">/&gt;</span><br>
+&nbsp;&nbsp;<span class="keyword">&lt;</span><span class="component">HoLoader</span> <span class="prop">:size</span>=<span class="string">"24"</span> <span class="prop">animation</span>=<span class="string">"spin"</span> <span class="keyword">/&gt;</span><br>
+<span class="keyword">&lt;/template&gt;</span>`;
+});
+
+const nuxtCodeHtml = `<span class="comment">// nuxt.config.ts</span><br>
+<span class="keyword">export default</span> defineNuxtConfig({<br>
+&nbsp;&nbsp;<span class="prop">modules</span>: [<span class="string">'@hovue/nuxt'</span>]<br>
+})`;
+
+const vueCode = computed(() => {
+  return '<' + 'script setup>\n' +
+    'import { HoArrowRight, HoCheck, HoLoader } from \'@hovue/icons\'\n' +
+    '</' + 'script>\n\n' +
+    '<template>\n' +
+    '  <HoArrowRight :size="24" animation="slide" />\n' +
+    '  <HoCheck :size="24" animation="bounce" />\n' +
+    '  <HoLoader :size="24" animation="spin" />\n' +
+    '</template>';
+});
+
+const nuxtCode = `// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['@hovue/nuxt']
+})`;
+
+const currentCode = computed(() => {
+  return activeTab.value === 'vue' ? vueCode.value : nuxtCode;
+});
 </script>
 
 <style scoped>
@@ -147,5 +158,32 @@ const activeTab = ref<'vue' | 'nuxt'>('vue');
 }
 .code-content :deep(.value) {
   color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .code-header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .code-dots {
+    order: 1;
+  }
+
+  .code-header :deep(.copy-button) {
+    order: 2;
+  }
+
+  .code-tabs {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .code-content {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
 }
 </style>

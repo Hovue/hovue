@@ -1,4 +1,3 @@
-// Export all icons
 export { default as HoArrowRight } from './icons/HoArrowRight.vue';
 export { default as HoArrowLeft } from './icons/HoArrowLeft.vue';
 export { default as HoArrowUp } from './icons/HoArrowUp.vue';
@@ -36,6 +35,5 @@ export { default as HoClock } from './icons/HoClock.vue';
 export { default as HoCalendar } from './icons/HoCalendar.vue';
 export { default as HoStar } from './icons/HoStar.vue';
 
-// Export types
 export type { IconProps } from './icons/types';
 

@@ -2,7 +2,7 @@
 
 This document outlines the planned features and improvements for the Hovue website.
 
-## 🎯 Current Version (v1.0.0)
+## Current Version (v1.0.0)
 
 - ✅ Modern Astro + Vue website
 - ✅ Dark mode support with theme toggle
@@ -19,7 +19,7 @@ This document outlines the planned features and improvements for the Hovue websi
 - ✅ Previous/Next navigation for docs pages
 - ✅ Scrollable sidebar navigation
 
-## 🚀 Short-term (Next 3 months)
+## Short-term (Next 3 months)
 
 ### Documentation
 - [x] Expand documentation pages
@@ -41,22 +41,22 @@ This document outlines the planned features and improvements for the Hovue websi
 - [ ] Download icon as SVG/PNG
 
 ### User Experience
-- [ ] Improved mobile navigation
+- [x] Improved mobile navigation
 - [ ] Keyboard shortcuts
-- [ ] Better loading states
-- [ ] Accessibility improvements (WCAG 2.1 AA)
+- [x] Better loading states
+- [x] Accessibility improvements (WCAG 2.1 AA)
 
-## 📅 Medium-term (3-6 months)
+## Medium-term (3-6 months)
 
 ### Advanced Features
 - [ ] Icon customization tool
-  - [ ] Color picker
-  - [ ] Size adjustment
-  - [ ] Animation selection
-- [ ] Icon playground
+  - [x] Color picker
+  - [x] Size adjustment
+  - [x] Animation selection
+- [x] Icon playground
 - [ ] Export configurations
 - [ ] Integration examples
-  - [ ] Nuxt 3 examples
+  - [x] Nuxt 3 examples
   - [ ] shadcn-vue examples
   - [ ] Vue 3 examples
 
@@ -102,7 +102,7 @@ This document outlines the planned features and improvements for the Hovue websi
 - [ ] Performance metrics
 - [ ] User feedback system
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! If you'd like to work on any of these features:
 
@@ -110,14 +110,14 @@ We welcome contributions! If you'd like to work on any of these features:
 2. Open an issue to discuss your idea
 3. Submit a pull request
 
-## 📝 Notes
+## Notes
 
 - This roadmap is subject to change based on community feedback
 - Priorities may shift based on user needs
 - Features marked with ✅ are completed
 - Features marked with [ ] are planned or in progress
 
-## 💡 Suggestions
+## Suggestions
 
 Have an idea that's not on the roadmap? We'd love to hear it!
 
@@ -127,7 +127,7 @@ Have an idea that's not on the roadmap? We'd love to hear it!
 
 ---
 
-**Last Updated:** 2026-01-27
+**Last Updated:** 2026-01-14
 
 ## 🎉 Recently Completed (v1.0.0)
 

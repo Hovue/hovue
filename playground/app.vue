@@ -4,17 +4,20 @@
     <header class="playground-header">
       <div class="header-content">
         <div class="header-brand">
-          <a href="/" class="logo-link">
+          <a href="https://hovue.xyz" class="logo-link">
             <img src="/logo.png" alt="Hovue Logo" class="logo-img" />
-            <div>
+            <div class="brand-text">
               <h1 class="playground-title">Playground</h1>
-              <p class="playground-subtitle">Test and explore Hovue icons with interactive controls</p>
+              <p class="playground-subtitle">Test and explore Hovue icons</p>
             </div>
           </a>
         </div>
         <div class="header-actions">
-          <a href="/" class="btn-secondary">
-            View Docs
+          <a href="https://hovue.xyz" class="btn-secondary desktop-only">
+            Home
+          </a>
+          <a href="https://hovue.xyz/docs" class="btn-secondary">
+            Docs
           </a>
           <button @click="toggleTheme" class="theme-toggle" :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
             <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -32,84 +35,117 @@
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
+          <button @click="toggleMobileSidebar" class="mobile-menu-btn mobile-only">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
     </header>
 
+    <!-- Mobile Sidebar Overlay -->
+    <div
+      v-if="isMobileSidebarOpen"
+      class="sidebar-overlay"
+      @click="closeMobileSidebar"
+    ></div>
+
     <!-- Main Content -->
     <div class="playground-main">
       <!-- Sidebar Controls -->
-      <aside class="playground-sidebar">
-        <div class="sidebar-section">
-          <h3 class="sidebar-title">Search Icons</h3>
-          <input
-            v-model="searchQuery"
-            type="text"
-            placeholder="Search icons..."
-            class="search-input"
-          />
+      <aside :class="['playground-sidebar', { 'mobile-open': isMobileSidebarOpen }]">
+        <div class="sidebar-header mobile-only">
+          <h2 class="sidebar-header-title">Controls</h2>
+          <button @click="closeMobileSidebar" class="sidebar-close-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
 
-        <div class="sidebar-section">
-          <h3 class="sidebar-title">Icon Size</h3>
-          <div class="control-group">
+        <div class="sidebar-content">
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Search Icons</h3>
             <input
-              v-model.number="iconSize"
-              type="range"
-              min="16"
-              max="64"
-              step="4"
-              class="slider"
+              v-model="searchQuery"
+              type="text"
+              placeholder="Search icons..."
+              class="search-input"
             />
-            <span class="control-value">{{ iconSize }}px</span>
           </div>
-        </div>
 
-        <div class="sidebar-section">
-          <h3 class="sidebar-title">Animation</h3>
-          <div class="control-group">
-            <select v-model="selectedAnimation" class="select-input">
-              <option value="slide">Slide</option>
-              <option value="bounce">Bounce</option>
-              <option value="rotate">Rotate</option>
-              <option value="pulse">Pulse</option>
-              <option value="fade">Fade</option>
-              <option value="">None</option>
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Category</h3>
+            <!-- Desktop: Button list -->
+            <div class="category-list desktop-only">
+              <button
+                v-for="category in categories"
+                :key="category"
+                :class="['category-btn', { active: selectedCategory === category }]"
+                @click="selectedCategory = category"
+              >
+                {{ category }}
+              </button>
+            </div>
+            <!-- Mobile: Dropdown -->
+            <select v-model="selectedCategory" class="select-input mobile-only">
+              <option v-for="category in categories" :key="category" :value="category">
+                {{ category }}
+              </option>
             </select>
           </div>
-        </div>
 
-        <div class="sidebar-section">
-          <h3 class="sidebar-title">Color</h3>
-          <div class="color-grid">
-            <button
-              v-for="color in colors"
-              :key="color.name"
-              :class="['color-btn', { active: selectedColor === color.value }]"
-              :style="{ backgroundColor: color.value === 'currentColor' ? (isDark ? '#fff' : '#000') : color.value }"
-              @click="selectedColor = color.value"
-              :title="color.name"
-            />
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Icon Size</h3>
+            <div class="control-group">
+              <input
+                v-model.number="iconSize"
+                type="range"
+                min="16"
+                max="64"
+                step="4"
+                class="slider"
+              />
+              <span class="control-value">{{ iconSize }}px</span>
+            </div>
           </div>
-          <input
-            v-model="selectedColor"
-            type="text"
-            placeholder="#000000"
-            class="color-input"
-          />
-        </div>
 
-        <div class="sidebar-section">
-          <h3 class="sidebar-title">Category</h3>
-          <div class="category-list">
-            <button
-              v-for="category in categories"
-              :key="category"
-              :class="['category-btn', { active: selectedCategory === category }]"
-              @click="selectedCategory = category"
-            >
-              {{ category }}
-            </button>
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Animation</h3>
+            <div class="control-group">
+              <select v-model="selectedAnimation" class="select-input">
+                <option value="slide">Slide</option>
+                <option value="bounce">Bounce</option>
+                <option value="rotate">Rotate</option>
+                <option value="pulse">Pulse</option>
+                <option value="fade">Fade</option>
+                <option value="">None</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Color</h3>
+            <div class="color-grid">
+              <button
+                v-for="color in colors"
+                :key="color.name"
+                :class="['color-btn', { active: selectedColor === color.value }]"
+                :style="{ backgroundColor: color.value === 'currentColor' ? (isDark ? '#fff' : '#000') : color.value }"
+                @click="selectedColor = color.value"
+                :title="color.name"
+              />
+            </div>
+            <input
+              v-model="selectedColor"
+              type="text"
+              placeholder="#000000"
+              class="color-input"
+            />
           </div>
         </div>
       </aside>
@@ -200,13 +236,26 @@ const selectedColor = ref('currentColor')
 const selectedIcon = ref('ArrowRight')
 const copied = ref(false)
 const isDark = ref(false)
+const isMobileSidebarOpen = ref(false)
 
-// Convert empty string to undefined for icon component
+const toggleMobileSidebar = () => {
+  isMobileSidebarOpen.value = !isMobileSidebarOpen.value
+  if (isMobileSidebarOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
+}
+
+const closeMobileSidebar = () => {
+  isMobileSidebarOpen.value = false
+  document.body.style.overflow = ''
+}
+
 const animationValue = computed<AnimationType>(() => {
   return selectedAnimation.value === '' ? undefined : (selectedAnimation.value as AnimationType)
 })
 
-// Initialize theme from localStorage or system preference
 onMounted(() => {
   const stored = localStorage.getItem('hovue-theme')
   if (stored) {
@@ -277,12 +326,10 @@ const iconCategories: Record<string, string[]> = {
 const filteredIcons = computed(() => {
   let icons = allIcons
 
-  // Filter by category
   if (selectedCategory.value !== 'All') {
     icons = iconCategories[selectedCategory.value] || []
   }
 
-  // Filter by search
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
     icons = icons.filter(icon => icon.toLowerCase().includes(query))
@@ -720,7 +767,6 @@ const copyCode = async () => {
   transition: transform 0.2s;
 }
 
-/* Force animations to be active in preview - override hover requirement */
 .preview-icon-wrapper :deep(.hovue-animation-slide) {
   animation: slidePreview 2s ease infinite !important;
 }
@@ -907,6 +953,29 @@ const copyCode = async () => {
   color: #a0aec0;
 }
 
+/* Responsive utilities */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+/* Sidebar overlay */
+.sidebar-overlay {
+  display: none;
+}
+
+/* Mobile sidebar header */
+.sidebar-header {
+  display: none;
+}
+
+.sidebar-content {
+  display: contents;
+}
+
 @media (max-width: 1024px) {
   .playground-main {
     grid-template-columns: 1fr;
@@ -914,6 +983,239 @@ const copyCode = async () => {
 
   .playground-sidebar {
     position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  /* Header mobile styles */
+  .playground-header {
+    padding: 1rem;
+  }
+
+  .header-content {
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .playground-title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .playground-subtitle {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .mobile-menu-btn {
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d3748;
+    transition: all 0.2s;
+  }
+
+  .dark-mode .mobile-menu-btn {
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+
+  .mobile-menu-btn:hover {
+    background: #f7fafc;
+    border-color: #4299e1;
+  }
+
+  .dark-mode .mobile-menu-btn:hover {
+    background: #4a5568;
+  }
+
+  /* Sidebar overlay */
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 150;
+  }
+
+  /* Mobile sidebar */
+  .playground-main {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .playground-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    max-width: 85vw;
+    height: 100vh;
+    z-index: 200;
+    border-radius: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .playground-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+    flex-shrink: 0;
+  }
+
+  .dark-mode .sidebar-header {
+    border-bottom-color: #4a5568;
+  }
+
+  .sidebar-header-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1a202c;
+  }
+
+  .dark-mode .sidebar-header-title {
+    color: #f7fafc;
+  }
+
+  .sidebar-close-btn {
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a5568;
+    transition: all 0.2s;
+  }
+
+  .dark-mode .sidebar-close-btn {
+    border-color: #4a5568;
+    color: #a0aec0;
+  }
+
+  .sidebar-close-btn:hover {
+    border-color: #4299e1;
+    color: #4299e1;
+  }
+
+  .sidebar-content {
+    display: block;
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem;
+  }
+
+  /* Category dropdown on mobile */
+  .category-list {
+    display: none;
+  }
+
+  /* Preview card mobile */
+  .preview-card {
+    padding: 1rem;
+  }
+
+  .preview-display {
+    padding: 2rem 1rem;
+    min-height: 150px;
+  }
+
+  .preview-title {
+    font-size: 1.25rem;
+  }
+
+  .preview-code pre {
+    font-size: 0.75rem;
+  }
+
+  /* Icons section mobile */
+  .icons-section {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .icon-card {
+    padding: 1rem 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .icon-name {
+    font-size: 0.625rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .playground-header {
+    padding: 0.75rem;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .icons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .icon-card {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .icon-display {
+    min-height: 28px;
+  }
+
+  .icon-display > * {
+    transform: scale(0.85);
   }
 }
 </style>

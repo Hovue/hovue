@@ -4,7 +4,6 @@ export interface ModuleOptions {
   prefix?: string
 }
 
-// List of all available icons
 const iconNames = [
   'ArrowRight',
   'ArrowLeft',
@@ -53,7 +52,6 @@ export default defineNuxtModule<ModuleOptions>({
     prefix: 'Ho'
   },
   async setup(options, nuxt) {
-    // Add all icon components with auto-import
     for (const iconName of iconNames) {
       addComponent({
         name: `${options.prefix}${iconName}`,

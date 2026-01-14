@@ -27,7 +27,6 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <script>
-  // Animate elements on scroll
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px',
@@ -45,11 +44,11 @@ import Footer from '../components/Footer.astro';
     observer.observe(el);
   });
 
-  // Smooth scroll for navigation
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', (e: Event) => {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href') || '');
+      const href = (anchor as HTMLAnchorElement).getAttribute('href') || '';
+      const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }

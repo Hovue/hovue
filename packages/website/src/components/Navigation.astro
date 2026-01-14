@@ -449,19 +449,15 @@ import ThemeToggle from './ThemeToggle.vue';
     menuBtn?.addEventListener('click', openMenu);
     closeBtn?.addEventListener('click', closeMenu);
 
-    // Close on overlay click (outside menu)
     overlay?.addEventListener('click', (e) => {
       if (e.target === overlay) {
         closeMenu();
       }
     });
 
-    // Close on link click
     overlay?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMenu);
     });
-
-    // Close on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay?.classList.contains('active')) {
         closeMenu();
