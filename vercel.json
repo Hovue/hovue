@@ -1,5 +1,5 @@
 {
-  "buildCommand": "bash build-for-vercel.sh",
+  "buildCommand": "cd playground && pnpm generate && cd .. && mkdir -p packages/website/public/playground && cp -r playground/.output/public/* packages/website/public/playground/ && cd packages/website && pnpm build",
   "outputDirectory": "packages/website/dist",
   "devCommand": "cd packages/website && pnpm dev",
   "installCommand": "pnpm install",
