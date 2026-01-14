@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "build:vercel": "rm -rf playground/.output packages/website/public/playground packages/website/dist && pnpm --filter @hovue/icons build && pnpm --filter @hovue/nuxt build && (pnpm --filter hovue-playground generate || (echo '⚠️  Playground build failed' && exit 1)) && mkdir -p packages/website/public/playground && (test -d playground/.output/public && cp -r playground/.output/public/* packages/website/public/playground/ || (echo '❌ No playground files to copy' && exit 1)) && pnpm --filter @hovue/website build && (test -d packages/website/dist/playground && echo '✅ Playground files in dist' || (echo '❌ Playground files missing in dist' && exit 1))",
+    "build:vercel": "rm -rf playground/.output playground/.vercel packages/website/public/playground packages/website/dist && pnpm --filter @hovue/icons build && pnpm --filter @hovue/nuxt build && (pnpm --filter hovue-playground generate || (echo '⚠️  Playground build failed' && exit 1)) && mkdir -p packages/website/public/playground && if [ -d playground/.output/public ]; then cp -r playground/.output/public/* packages/website/public/playground/; elif [ -d playground/.vercel/output/static/playground ]; then cp -r playground/.vercel/output/static/playground/* packages/website/public/playground/; else echo '❌ No playground files found in .output/public or .vercel/output/static/playground' && exit 1; fi && pnpm --filter @hovue/website build && (test -d packages/website/dist/playground && echo '✅ Playground files in dist' || (echo '❌ Playground files missing in dist' && exit 1))",
     "deploy": "vercel --prod",
     "deploy:preview": "vercel",
     "lint": "turbo lint",

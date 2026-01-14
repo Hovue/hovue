@@ -2,6 +2,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   nitro: {
+    preset: 'static',
+    output: {
+      publicDir: '.output/public'
+    },
     prerender: {
       routes: ['/']
     }
