@@ -38,7 +38,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
    ```
 3. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 4. Create a new branch:
    ```bash

@@ -1,0 +1,88 @@
+# Auto-labeling configuration for issues and PRs
+# Based on file paths, title patterns, and content
+
+# Package labels based on file changes
+'package: icons':
+  - packages/icons/**/*
+  - '**/icons/**/*'
+
+'package: nuxt':
+  - packages/nuxt/**/*
+  - '**/nuxt/**/*'
+
+'package: cli':
+  - packages/cli/**/*
+  - '**/cli/**/*'
+
+'package: website':
+  - packages/website/**/*
+  - '**/website/**/*'
+
+'package: playground':
+  - playground/**/*
+
+'package: monorepo':
+  - turbo.json
+  - pnpm-workspace.yaml
+  - package.json
+  - .github/workflows/**/*
+
+# Type labels based on title patterns
+'type: bug':
+  - title: '(?i).*(bug|fix|error|issue|broken|crash|fail).*'
+
+'type: enhancement':
+  - title: '(?i).*(feat|feature|add|new|improve|enhance).*'
+
+'type: documentation':
+  - title: '(?i).*(doc|readme|guide|tutorial|example).*'
+  - '**/*.md'
+  - '**/docs/**/*'
+
+'type: chore':
+  - title: '(?i).*(chore|refactor|cleanup|update|bump).*'
+  - '**/package.json'
+  - '**/pnpm-lock.yaml'
+
+# Area labels based on file paths
+'area: build':
+  - '**/vite.config.*'
+  - '**/tsconfig.json'
+  - '**/.github/workflows/**/*'
+  - '**/turbo.json'
+
+'area: docs':
+  - '**/*.md'
+  - '**/docs/**/*'
+  - packages/website/**/*
+
+'area: ux':
+  - packages/website/src/components/**/*.vue
+  - packages/website/src/components/**/*.astro
+  - playground/**/*.vue
+
+'area: performance':
+  - title: '(?i).*(perf|performance|optimize|speed|bundle).*'
+
+'area: accessibility':
+  - title: '(?i).*(a11y|accessibility|aria|screen.*reader).*'
+
+'area: seo':
+  - title: '(?i).*(seo|meta|og:|twitter:).*'
+  - packages/website/src/layouts/**/*
+
+# Priority labels (can be manually set, but auto-detect critical)
+'priority: critical':
+  - title: '(?i).*(critical|security|urgent|hotfix).*'
+
+# Status labels (usually set manually, but can auto-detect)
+'status: needs-review':
+  - title: '(?i).*(review|feedback|ready).*'
+
+# Community labels
+'good first issue':
+  - title: '(?i).*(first|beginner|starter|easy|simple).*'
+
+'help wanted':
+  - title: '(?i).*(help|contribution|community).*'
+

@@ -2,8 +2,15 @@
 
 > Animated Vue Icons with Motion Baked In
 
-[![npm version](https://img.shields.io/npm/v/@hovue/icons)](https://www.npmjs.com/package/@hovue/icons)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/@hovue/icons?style=flat-square)](https://www.npmjs.com/package/@hovue/icons)
+[![npm downloads](https://img.shields.io/npm/dm/@hovue/icons?style=flat-square)](https://www.npmjs.com/package/@hovue/icons)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@hovue/icons?style=flat-square)](https://bundlephobia.com/package/@hovue/icons)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![CI](https://img.shields.io/github/actions/workflow/status/hovue/hovue/.github/workflows/ci.yml?branch=main&style=flat-square)](https://github.com/hovue/hovue/actions)
+[![GitHub stars](https://img.shields.io/github/stars/hovue/hovue?style=flat-square)](https://github.com/hovue/hovue/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/hovue/hovue?style=flat-square)](https://github.com/hovue/hovue/issues)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Vue 3](https://img.shields.io/badge/Vue-3.5-4FC08D?style=flat-square&logo=vue.js)](https://vuejs.org/)
 
 A collection of beautiful, animated Vue 3 icons with CSS-based animations. Perfect for modern Vue and Nuxt applications.
 

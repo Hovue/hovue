@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Documentation
-    url: https://hovue.dev/docs
+    url: https://hovue.xyz/docs
     about: Check our documentation for answers
   - name: Discussions
     url: https://github.com/hovue/hovue/discussions

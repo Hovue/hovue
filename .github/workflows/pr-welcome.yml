@@ -1,0 +1,36 @@
+name: Welcome New Contributors
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Welcome first-time contributors
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: |
+            👋 Welcome to Hovue! Thank you for your contribution!
+            
+            We appreciate you taking the time to submit a pull request. Our team will review it as soon as possible.
+            
+            In the meantime, feel free to:
+            - Check out our [Contributing Guide](https://github.com/hovue/hovue/blob/main/CONTRIBUTING.md)
+            - Join our [Discussions](https://github.com/hovue/hovue/discussions)
+            - Star the repo if you find it useful ⭐
+            
+            Happy coding! 🚀
+          issue-message: |
+            👋 Welcome to Hovue! Thank you for opening an issue!
+            
+            We'll review your issue and get back to you soon. In the meantime, feel free to:
+            - Check our [Documentation](https://hovue.xyz/docs)
+            - Join our [Discussions](https://github.com/hovue/hovue/discussions)
+            - Star the repo if you find it useful ⭐
+

@@ -1,0 +1,59 @@
+name: Mark Stale Issues and PRs
+
+on:
+  schedule:
+    # Run every day at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Mark stale issues and PRs
+        uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Issues configuration
+          stale-issue-message: |
+            This issue has been automatically marked as stale because it has not had recent activity. 
+            It will be closed if no further activity occurs within 7 days. Thank you for your contributions.
+            
+            If this issue is still relevant, please:
+            - Add a comment to keep it active
+            - Remove the `stale` label
+            - Or close it if it's no longer needed
+          close-issue-message: |
+            This issue was automatically closed due to inactivity. If you believe this was done in error, 
+            please feel free to reopen it or create a new issue.
+          days-before-issue-stale: 60
+          days-before-issue-close: 7
+          stale-issue-label: 'stale'
+          exempt-issue-labels: 'priority: critical,priority: high,status: in-progress,help wanted,good first issue'
+          
+          # PR configuration
+          stale-pr-message: |
+            This pull request has been automatically marked as stale because it has not had recent activity. 
+            It will be closed if no further activity occurs within 7 days. Thank you for your contributions.
+            
+            If this PR is still relevant, please:
+            - Add a comment or push new commits
+            - Remove the `stale` label
+            - Or close it if it's no longer needed
+          close-pr-message: |
+            This pull request was automatically closed due to inactivity. If you believe this was done in error, 
+            please feel free to reopen it or create a new PR.
+          days-before-pr-stale: 30
+          days-before-pr-close: 7
+          stale-pr-label: 'stale'
+          exempt-pr-labels: 'priority: critical,priority: high,status: in-progress,status: needs-review'
+          
+          # General settings
+          operations-per-run: 30
+          remove-stale-when-updated: true
+          ascending: true
+
