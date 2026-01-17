@@ -12,8 +12,8 @@ importers:
         specifier: ^3.2.0
         version: 3.7.4
       prettier-plugin-astro:
-        specifier: ^0.12.0
-        version: 0.12.3
+        specifier: ^0.14.1
+        version: 0.14.1
       turbo:
         specifier: ^2.0.0
         version: 2.7.3
@@ -48,24 +48,6 @@ importers:
       typescript:
         specifier: ^5.4.0
         version: 5.9.3
-
-  packages/hovue:
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^5.2.4
-        version: 5.2.4(vite@5.4.21)(vue@3.5.26)
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-      vite:
-        specifier: ^5.4.21
-        version: 5.4.21(@types/node@20.19.27)
-      vite-plugin-dts:
-        specifier: ^3.9.1
-        version: 3.9.1(typescript@5.9.3)(vite@5.4.21)
-      vue:
-        specifier: ^3.5.26
-        version: 3.5.26(typescript@5.9.3)
 
   packages/icons:
     devDependencies:
@@ -126,8 +108,8 @@ importers:
         specifier: ^3.2.0
         version: 3.7.4
       prettier-plugin-astro:
-        specifier: ^0.12.0
-        version: 0.12.3
+        specifier: ^0.14.1
+        version: 0.14.1
       typescript:
         specifier: ^5.3.0
         version: 5.9.3
@@ -160,13 +142,8 @@ packages:
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
     dev: false
 
-  /@astrojs/compiler@1.8.2:
-    resolution: {integrity: sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==}
-    dev: true
-
   /@astrojs/compiler@2.13.0:
     resolution: {integrity: sha512-mqVORhUJViA28fwHYaWmsXSzLO9osbdZ5ImUfxBarqsYdMlPbqAqGJCxsNzvppp1BEzc1mJNjOVvQqeDN8Vspw==}
-    dev: false
 
   /@astrojs/internal-helpers@0.4.1:
     resolution: {integrity: sha512-bMf9jFihO8YP940uD70SI/RDzIhUHJAolWVcO1v5PUivxGKvfLZTLTVVxEYzGYyPsA3ivdLNqMnL5VgmQySa+g==}
@@ -7765,11 +7742,11 @@ packages:
       which-pm: 3.0.1
     dev: false
 
-  /prettier-plugin-astro@0.12.3:
-    resolution: {integrity: sha512-GthUSu3zCvmtVyqlArosez0xE08vSJ0R1sWurxIWpABaCkNGYFANoUdFkqmIo54EV2uPLGcVJzOucWvCjPBWvg==}
+  /prettier-plugin-astro@0.14.1:
+    resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
-      '@astrojs/compiler': 1.8.2
+      '@astrojs/compiler': 2.13.0
       prettier: 3.7.4
       sass-formatter: 0.7.9
     dev: true
