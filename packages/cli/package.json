@@ -36,7 +36,7 @@
     "clean": "rm -rf dist node_modules"
   },
   "dependencies": {
-    "commander": "^11.1.0",
+    "commander": "^14.0.2",
     "chalk": "^5.3.0",
     "fs-extra": "^11.2.0",
     "glob": "^10.3.10"
