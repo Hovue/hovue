@@ -37,13 +37,13 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (theme === 'dark' || (!theme && prefersDark)) {
           document.documentElement.classList.add('dark');
-          document.documentElement.style.backgroundColor = '#1a202c';
+          document.documentElement.style.backgroundColor = '#0d1f1e';
         } else {
-          document.documentElement.style.backgroundColor = '#ffffff';
+          document.documentElement.style.backgroundColor = '#fafcfc';
         }
       })();
     </script>
-    <meta name="theme-color" content="#ffffff" id="theme-color" />
+    <meta name="theme-color" content="#319795" id="theme-color" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>

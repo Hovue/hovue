@@ -4,22 +4,19 @@ import NpmBadges from './NpmBadges.astro';
 ---
 
 <section class="hero">
-  <div class="badge">
-    <span class="badge-dot"></span>
-    We're Proudly Open Source
-  </div>
+  <div class="hero-glow"></div>
 
-  <h1>
+  <h1 class="animate-hero" style="--delay: 0s">
     Icons that <span class="accent-text">move</span><br />
     with <span class="accent-text">intent</span>
   </h1>
 
-  <p class="hero-subtitle">
+  <p class="hero-subtitle animate-hero" style="--delay: 0.1s">
     Editable Vue components with motion baked in. Works seamlessly with Nuxt, shadcn-vue, and modern
     design systems.
   </p>
 
-  <div class="hero-actions">
+  <div class="hero-actions animate-hero" style="--delay: 0.2s">
     <a href="#icons" class="btn btn-primary btn-large">
       <svg
         width="20"
@@ -53,11 +50,11 @@ import NpmBadges from './NpmBadges.astro';
     </a>
   </div>
 
-  <div class="npm-badges-wrapper">
+  <div class="npm-badges-wrapper animate-hero" style="--delay: 0.3s">
     <NpmBadges />
   </div>
 
-  <div class="code-preview">
+  <div class="code-preview animate-hero" style="--delay: 0.4s">
     <CodePreview client:load />
   </div>
 </section>
@@ -73,47 +70,71 @@ import NpmBadges from './NpmBadges.astro';
     padding: calc(80px + var(--spacing-3xl)) var(--spacing-xl) var(--spacing-3xl);
     max-width: 1280px;
     margin: 0 auto;
+    position: relative;
   }
 
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-xs) var(--spacing-md);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-xl);
-    font-weight: 500;
+  .hero-glow {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, var(--primary-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.8;
   }
 
-  .badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--primary);
-    border-radius: 50%;
+  .animate-hero {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--delay, 0s);
+  }
+
+  @keyframes heroReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: clamp(2.75rem, 7vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
     margin-bottom: var(--spacing-lg);
     color: var(--text-primary);
+    letter-spacing: -0.03em;
   }
 
   .hero h1 .accent-text {
     color: var(--primary);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero h1 .accent-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 0;
+    right: 0;
+    height: 0.15em;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--cyan-light) 100%);
+    opacity: 0.3;
+    border-radius: 9999px;
   }
 
   .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto var(--spacing-2xl);
     line-height: 1.7;
+    font-weight: 400;
   }
 
   .hero-actions {
@@ -121,17 +142,30 @@ import NpmBadges from './NpmBadges.astro';
     gap: var(--spacing-md);
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-2xl);
   }
 
   .npm-badges-wrapper {
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-xl) 0 var(--spacing-2xl);
   }
 
   .code-preview {
     width: 100%;
     max-width: 800px;
-    margin-top: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
     text-align: left;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .hero-subtitle {
+      font-size: 1.0625rem;
+    }
   }
 </style>
