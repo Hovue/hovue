@@ -36,7 +36,7 @@
     "clean": "turbo clean && rm -rf node_modules"
   },
   "devDependencies": {
-    "turbo": "^2.0.0",
+    "turbo": "^2.9.18",
     "typescript": "^5.4.0",
     "prettier": "^3.2.0",
     "prettier-plugin-astro": "^0.12.0"
